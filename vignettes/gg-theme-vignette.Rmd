@@ -1,0 +1,71 @@
+---
+title: "Vignette Title"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Set Up
+
+```{r}
+library(Rtistic)
+library(ggplot2)
+```
+
+
+```{r}
+points <- data.frame(x = 1:10, y = 1:10)
+distrb <- data.frame(x = rep(1:6, 10), y = rnorm(60, 0, 1))
+```
+
+## Discrete Palettes
+
+```{r}
+g_points <- ggplot(points, aes(x, y, col = factor(x))) + geom_point(size = 5)
+g_distrb <- ggplot(distrb, aes(y, fill = factor(x))) + geom_density() + facet_wrap(. ~ x, ncol = 3)
+```
+
+```{r}
+g_points
+g_distrb
+```
+
+```{r}
+g_points + scale_color_discrete_test()
+g_points + scale_color_discrint_test(points$x)
+g_distrb + scale_fill_discrete_test()
+g_distrb + scale_fill_discrint_test(distrb$x)
+```
+
+## Continuous Palettes
+
+Now we will remake our scatterplot with the `color` aesthetic as a continuous variable to demonstrate our continuous scales.
+
+```{r}
+g_points_cont <- ggplot(points, aes(x, y, col = x)) + geom_point(size = 5)
+g_points_cont
+```
+
+Diverging palettes grow more extreme at the endpoints. You can specify the `midpoint` of where the center should be. 
+
+```{r}
+g_points_cont + scale_color_contdiv_test(midpoint = 5)
+```
+
+Normal continuous scales gradually move between two ends of a spectrum.
+
+```{r}
+g_points_cont + scale_color_cont_test()
+```
+

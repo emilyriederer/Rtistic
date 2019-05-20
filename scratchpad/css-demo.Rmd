@@ -1,0 +1,109 @@
+---
+title: "Untitled"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{css}
+/*you can include comments in CSS code like this!*/
+  
+body{
+  
+}
+
+h1 {
+  color: green;
+}
+
+h2 {
+  color: blue;
+}
+
+
+/* use commas to select multiple elements at once */
+h3, h4, h5, h6 {
+  color: yellow;
+}
+
+.tabset-pills {
+  background: lightgrey;
+}
+
+/* use the > to select children of a certain parent */
+.tabset-pills>li {
+  background: magenta;
+  face: bold;
+}
+```
+
+## Including Plots
+
+Text text text
+
+### Subsection 1 
+
+More text
+
+### Subsection 2
+
+More text
+
+## A Tabbed Section {.tabset .tabset-fade .tabset-pills}
+
+Text text text
+
+### Subsection 1
+
+More text
+
+### Subsection 2
+
+More text
+
+## Custom Class {.myclass}
+
+Text text text
+
+### Subsection 1
+
+More text
+
+### Subsection 2
+
+More text
+
+## Custom Class Used Again {.myclass}
+
+Text text text
+
+### Subsection 1
+
+More text
+
+### Subsection 2
+
+More text
+
+## Custom ID {#cool}
+
+Text text text
+
+### Subsection 1
+
+More text
+
+### Subsection 2
+
+More text
