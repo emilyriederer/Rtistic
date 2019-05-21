@@ -25,7 +25,7 @@ points <-
 ggplot(data = points, 
        mapping = aes(x = x, y = y, col = factor(x))) + 
   geom_point(size = 5) + 
-  facet_grid(w ~ z) +
+  facet_grid(w ~ z, switch = "y") +
   theme(
     
     plot.background = element_rect(fill = "lightyellow"),
@@ -43,6 +43,10 @@ ggplot(data = points,
     axis.title.y = element_text(family = "mono", face = "bold", size = 20, hjust = 0.25),
     axis.text = element_text(face = "italic", size = 15),
     axis.text.x.bottom = element_text(angle = 180), # note that axis.text options from above are inherited
+    
+    strip.background = element_rect(fill = "magenta"),
+    strip.text.y = element_text(color = "white"),
+    strip.placement = "outside",
     
     legend.background = element_rect(fill = "orangered4"), # generally will want to match w plot background
     legend.key = element_rect(fill = "orange"),
