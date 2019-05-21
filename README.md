@@ -15,6 +15,12 @@ While `Rtistic` is intended to be fun and light-hearted. It also has real benefi
 - Looking under the hood at the structure of an R package
 - Working collaboratively through GitHub (with branches, PRs, etc.)
 
+Of course, depending on how much time you want to spend on this activity and where you want to focus (e.g. learning `ggplot2` options versus learning basic CSS for RMarkdown), any number of the parts can be scaled back. For example:
+
+- Only build either `ggplot2` or RMarkdown themes instead of both
+- Have participant share just a single `R` file instead of working with a package structure (e.g. )
+- Allow participants to email / upload their output somewhere else and not worry about making a PR
+
 
 ## Contents
 
@@ -41,7 +47,7 @@ Boilerplate code also exists in the `vignettes/` directory:
 
 - `gg-theme-vignette.R`: contains an array of basic plots on which new themes can be demoed
 
-These are the files that participants should ultimately edit, save under new names, and PR back to the package.
+These are the files that participants should ultimately save under new names, edit, and PR back to the package.
 
 ## Process
 
@@ -71,7 +77,8 @@ Participant / Team Instructions:
 For more resources and advanced topics on styling `ggplot2` plot and RMarkdown documents, here are some resources that you can recommend to participants before your hackathon:
 
 - [Visualize Your Data primer on RStudio Cloud](https://rstudio.cloud/learn/primers/3): Starts with the basics of `ggplot2` and works its way up to a final section including plot customization. This will be useful for those wanting to create a new plot theme. The course does not have to be taken end-to-end, so those familiar with `ggplot2` can skip directly to the "Customization" section.
-- [Basic CSS course from FreeCodeCamp](https://learn.freecodecamp.org/): 
+- [Basic CSS course from FreeCodeCamp](https://learn.freecodecamp.org/): Learn the basics of CSS will help participants understand what can be easily changed in an RMarkdown theme and how to do it.
+- [The Selector Gadget tool](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html) can help participants explore the structure of an RMarkdown HTML output and find the HTML tags they want to style.
 
 ## Credits
 
