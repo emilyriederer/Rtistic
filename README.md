@@ -87,7 +87,7 @@ Understanding core R, `ggplot2`, and CSS concepts before the hackathon will make
 Looking at existing themes can spark creativity. More tactically, one can also borrow from these themes in their own designs.
 
 - [ggplot2 theme gallery](https://datascienceplus.com/ggplot2-themes-examples/): A preview of some common `ggplot2` themes. It also bears mention to participants that there are countless more themes in other projects and packages.
-- [RMarkdown theme gallery](http://www.datadreaming.org/post/r-markdown-theme-gallery/)
+- [RMarkdown theme gallery](http://www.datadreaming.org/post/r-markdown-theme-gallery/): As above, this blog demos a number of RMarkdown themes. Obviously, the collection is not comprehensive, but it gives a nice overview for context.
 
 ### Developer Utilities
 
