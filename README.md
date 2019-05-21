@@ -74,11 +74,25 @@ Participant / Team Instructions:
 
 ## Resources
 
-For more resources and advanced topics on styling `ggplot2` plot and RMarkdown documents, here are some resources that you can recommend to participants before your hackathon:
+### Core Learning Pre-Work
+
+Understanding core R, `ggplot2`, and CSS concepts before the hackathon will make it easier to suceed.
 
 - [Visualize Your Data primer on RStudio Cloud](https://rstudio.cloud/learn/primers/3): Starts with the basics of `ggplot2` and works its way up to a final section including plot customization. This will be useful for those wanting to create a new plot theme. The course does not have to be taken end-to-end, so those familiar with `ggplot2` can skip directly to the "Customization" section.
 - [Basic CSS course from FreeCodeCamp](https://learn.freecodecamp.org/): Learn the basics of CSS will help participants understand what can be easily changed in an RMarkdown theme and how to do it.
-- [The Selector Gadget tool](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html) can help participants explore the structure of an RMarkdown HTML output and find the HTML tags they want to style.
+- [Instructions for pull requests on GitHub](https://guides.github.com/activities/hello-world/): If you plan to use GitHub for team collaboration, this succinct overview explains how teams can submit their work through pull requests
+
+### Brainstorming
+
+Looking at existing themes can spark creativity. More tactically, one can also borrow from these themes in their own designs.
+
+- [ggplot2 theme gallery](https://datascienceplus.com/ggplot2-themes-examples/): A preview of some common `ggplot2` themes. It also bears mention to participants that there are countless more themes in other projects and packages.
+- [RMarkdown theme gallery](http://www.datadreaming.org/post/r-markdown-theme-gallery/)
+
+### Developer Utilities
+
+- [Selector Gadget tool](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html): This browser widget can help participants explore the structure of an RMarkdown HTML output and find the HTML tags they want to style.
+- [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/inspect-styles/): Similarly, most browsers have robust tools for inspecting a website's source code. These instructions explain how to use Chrome's version.
 
 ## Credits
 
