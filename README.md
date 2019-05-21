@@ -32,13 +32,13 @@ The following files are available in the `scratchpad/` directory to help with th
 - `gg-theme-demo.Rmd`: An RMarkdown document with dummy data and `ggplot2` with a lot of theme options. The current ggplot is pretty ugly, but this is an attempt to provide a near one-stop-shop overview into `ggplot2` theme options that participants can manipulate
 
 
-### Boilerplate Code To be Edited
+### Boilerplate Code to Edit
 
 Boilerplate package code exists in the `R/` and `inst/` directories:
 
-- `my-gg-palette.R`:
-- `my-gg-theme.R`:
-- `my-html-format.R`: Defines render function for customer RMarkdown theme. This depends upon:
+- `my-gg-palette.R`: Defines colors of choice and uses them to create discrete (fixed number and interpolated) and continuous (monotonic and diverging) color palettes
+- `my-gg-theme.R`: Defines theme function for custom `ggplot2`s
+- `my-html-format.R`: Defines render function for custom RMarkdown themes. This depends upon:
   + `inst/rmarkdown/resources/footer.html`: Custom HTML footer for inclusion in RMarkdown
   + `inst/rmarkdown/resources/logo.png`: Custom logo for inclusion in RMarkdown footer
   + `inst/rmarkdown/resources/styles.css`: Custom CSS to style RMarkdown
