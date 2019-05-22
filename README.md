@@ -1,4 +1,4 @@
-# Rtistic
+# Rtistic <img src="man/figures/logo.png" align="right" height=140/>
 
 **THIS REPO IS A WORK IN PROGRESS - DO NOT CURRENTLY ATTEMPT TO USE!**
 
