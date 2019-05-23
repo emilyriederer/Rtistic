@@ -97,7 +97,7 @@ Participant / Team Instructions:
 - Update the documentation to describe your pallete
 - Save your file and run it locallly
 
-### Testing & documenting the palette
+#### Documenting the palette
 
 - Make a copy of the `vignettes/my-gg-theme-vignette` in the same folder. Rename it as `{theme}-vignette.Rmd`
 - Change the existing `scale_color_*` and `scale_fill_*` functions to call the functions you have created to end with the suffix `_{theme}`
@@ -114,6 +114,7 @@ Participant / Team Instructions:
 - Make a copy of the `R/my-gg-theme.R` file in the same folder. Rename it as `{theme}-theme.R`
 - Change the name of the function being defined to `theme_{theme}`
 - Move the code you created in the RMarkdown into the function definition 
+- Update the documentation to describe your theme
 - Save your file and run it locally
 
 #### Documenting the theme
