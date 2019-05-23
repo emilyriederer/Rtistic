@@ -110,7 +110,7 @@ Participant / Team Instructions:
 
 - Check out existing themes linked in the Resources section below for inspiration (and reuse!)
 - Open up the `scratchpad/gg-theme-demo.Rmd` file and play around with the supplied theme to understand the options
-- Iterate until you like the settings you have made. `ggplot2` has very nice defaults, so don't fele obligated to make major -- or any -- changes if you don't want to.
+- Iterate until you like the settings you have made. `ggplot2` has very nice defaults, so don't feel obligated to make major -- or any -- changes if you don't want to.
 - Make a copy of the `R/my-gg-theme.R` file in the same folder. Rename it as `{theme}-theme.R`
 - Change the name of the function being defined to `theme_{theme}`
 - Move the code you created in the RMarkdown into the function definition 
@@ -124,6 +124,25 @@ Participant / Team Instructions:
 - Since vignettes serve as long-form documentation, add some descriptive text about what motivated this theme
 
 ### RMarkdown Style Instructions
+
+#### Defining CSS for your theme
+
+- Check out existing themes linked in the Resources section below for inspiration (and reuse!)
+- Open up the `scratchpad/rmd-theme-demo.Rmd` file and play around with the supplied CSS to understand the options
+- Iterate until you like the settings you have made. Like `ggplot2`, RMarkdown has very nice defaults, so don't feel obligated to make major -- or any -- changes if you don't want to.
+- Make a copy of the `inst/rmarkdown/resources/my-styles.css` file in the same folder. Rename it as `{theme}-styles.css`. Move your CSS code from the scratchpad into this file
+
+#### Defining a footer for your theme
+
+- TBD
+
+#### Defining the theme
+
+- Make a copy of the `R/my-html-format.R` file in the same folder. Rename it as `{theme}-html-format.R`
+- Change the name of the function being defined to `{theme}_html_format`
+- Edit the lines of code that provide the filepath for `css` and `footer` to the files you have defined
+- Pull up the documentation for `rmarkdown::html_document()`, learn about the other parameters you can pass in, and decide if there are any other changes that you want to make
+- Update the documentation to describe your theme
 
 ## Resources
 
