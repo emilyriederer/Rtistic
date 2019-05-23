@@ -61,7 +61,7 @@ Boilerplate code also exists in the `vignettes/` directory:
 
 These are the files that participants should ultimately save under new names, edit, and PR back to the package.
 
-## Process
+## High-Level Process
 
 Admin Instructions:
 
@@ -72,6 +72,7 @@ Admin Instructions:
   + Be sure to use the `available` package to make sure your name does not conflict with an existing package
 - Create a new repo for your hackathon package and repoint your local repo to it (`git remote set-url origin {{put HTTPS URL here}}`)
 - Help teams keep their work clean and modular and review PRs carefully as they come in
+- As a finals step, consider making a basic `pkgdown` site with all of the themes. Vignettes created by individual teams will beome articles to display all of the different new themes as a "gallery"
 
 Participant / Team Instructions:
 
@@ -83,6 +84,45 @@ Participant / Team Instructions:
 - Commit regularly as you make changes with informative messages (`git commit -m "{{what you changed}}"`)
 - When you're ready to submit, push back to your github branch (`git push origin {{your branch name}}`)
 - On GitHub, create a pull request with yor changes back to the main repo
+
+## Detailed Instructions for Participants
+
+### ggplot Palette Instructions
+
+#### Defining the palette
+
+- Make a copy of the `R/my-gg-palette.R` file in the same folder. Rename it as `{theme}-palette.R` where `{theme}` represents something descriptive about your theme.
+- Change the definitions of the variables `pal`, `pal_cont`, and `pal_div`
+- Rename all the functions by appending `_{theme}` to the end of the name, using the same `{theme}` keyword as above
+- Update the documentation to describe your pallete
+- Save your file and run it locallly
+
+### Testing & documenting the palette
+
+- Make a copy of the `vignettes/my-gg-theme-vignette` in the same folder. Rename it as `{theme}-vignette.Rmd`
+- Change the existing `scale_color_*` and `scale_fill_*` functions to call the functions you have created to end with the suffix `_{theme}`
+- Run the vignette chunks interactively to view your palettes. Iterate between this file and the R script defining the palettes until you are happy with the results.
+- Since vignettes serve as long-form documentation, add some descriptive text about what this palette is meant to represent
+
+### ggplot Theme Instructions
+
+#### Defining the theme
+
+- Check out existing themes linked in the Resources section below for inspiration (and reuse!)
+- Open up the `scratchpad/gg-theme-demo.Rmd` file and play around with the supplied theme to understand the options
+- Iterate until you like the settings you have made. `ggplot2` has very nice defaults, so don't fele obligated to make major -- or any -- changes if you don't want to.
+- Make a copy of the `R/my-gg-theme.R` file in the same folder. Rename it as `{theme}-theme.R`
+- Change the name of the function being defined to `theme_{theme}`
+- Move the code you created in the RMarkdown into the function definition 
+- Save your file and run it locally
+
+#### Documenting the theme
+
+- If you have not already done so, make a copy of the `vignettes/my-gg-theme-vignette` in the same folder. Rename it as `{theme}-vignette.Rmd`
+- Find where the `gg_points` and `gg_distrb` plot objects are defined at the top of the script. Add onto this code with `+ theme_{theme}()` to apply your theme to the plots
+- Since vignettes serve as long-form documentation, add some descriptive text about what motivated this theme
+
+### RMarkdown Style Instructions
 
 ## Resources
 
