@@ -26,11 +26,18 @@ Of course, depending on how much time you want to spend on this activity and whe
 
 ### Scratchpad Files for Experimentation
 
-The following files are available in the `scratchpad/` directory to help with the design process:
+The following files are available in the `scratchpad/` directory to help with the design process by quickly iterating on style choices:
 
 - `rmd-theme-demo.Rmd`: An RMarkdown document with an in-line CSS chunk. Ultimately, CSS will be moved to a separate file for your final theme package, but having it embedded in the document allows for fast and transparent iteration to see the effects of different options
 - `gg-theme-demo.Rmd`: An RMarkdown document with dummy data and `ggplot2` with a lot of theme options. The current ggplot is pretty ugly, but this is an attempt to provide a near one-stop-shop overview into `ggplot2` theme options that participants can manipulate
 
+### Helpers for Working with Images
+
+Including a logo or image in a self-contained RMarkdown requires translating that image into a text representation (called a URI). This folder helps users to abstract that process with the following files:
+
+- `my-footer-template.html`: Defines a combination of HTML code and a special `{LOGO}` placeholder
+- `my-logo.png`: An example logo. Additional logos can be kept here for convenience and package reproducibility
+- `generate-footer-logo.R`: A script that accepts template and logo file paths uses `glue` to replace `{LOGO}` with the correct URI representation
 
 ### Boilerplate Code to Edit
 

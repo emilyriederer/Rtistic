@@ -15,15 +15,9 @@ my_html_format = function(toc = TRUE, ...) {
     system.file(..., package = "Rtistic")
   }
 
-  css    = pkg_resource("rmarkdown/resources/styles.css")
-  footer = pkg_resource("rmarkdown/resources/footer_final.html")
-
-  # create file with encoded logo to insert
-  # logo   = pkg_resource("rmarkdown/resources/logo.png")
-  # logo_encoded = knitr::image_uri(logo)
-  # logo_html = paste('&nbsp;<hr /><img class = "logo" src = ', logo_encoded, "/>")
-  # logo_file = tempfile(fileext = ".html")
-  # xfun::write_utf8(logo_html, logo_file)
+  # create file paths to package assets
+  css    = pkg_resource("rmarkdown/resources/my-styles.css")
+  footer = pkg_resource("rmarkdown/resources/my-footer.html")
 
   # call the base html_document function
   rmarkdown::html_document(
@@ -37,11 +31,7 @@ my_html_format = function(toc = TRUE, ...) {
     number_sections = TRUE,
     includes = rmarkdown::includes(
       after_body = footer),
-      #in_header = logo_file,
-      #after_body = c(logo_file,footer)),
     ...
   )
-
-  #on.exit(unlink(logo_file), add = TRUE)
 
 }
