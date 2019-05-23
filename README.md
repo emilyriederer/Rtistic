@@ -52,7 +52,7 @@ Boilerplate package code exists in the `R/` and `inst/` directories:
 
 Boilerplate code also exists in the `vignettes/` directory:
 
-- `gg-theme-vignette.R`: contains an array of basic plots on which new themes can be demoed
+- `my-gg-theme-vignette.R`: contains an array of basic plots on which new themes can be demoed
 
 These are the files that participants should ultimately save under new names, edit, and PR back to the package.
 
