@@ -21,6 +21,11 @@ Of course, depending on how much time you want to spend on this activity and whe
 - Have participant share just a single `R` file instead of working with a package structure (e.g. )
 - Allow participants to email / upload their output somewhere else and not worry about making a PR
 
+Tactically, this may work the best if individuals break off into small groups to work on separate themes. Ideas of prompts could be each team creates their own theme for:
+
+- A character on a TV show
+- A season of the year
+- A monochromatic theme for each color of the rainbow
 
 ## Contents
 
