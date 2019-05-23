@@ -37,7 +37,7 @@ Including a logo or image in a self-contained RMarkdown requires translating tha
 
 - `my-footer-template.html`: Defines a combination of HTML code and a special `{LOGO}` placeholder
 - `my-logo.png`: An example logo. Additional logos can be kept here for convenience and package reproducibility
-- `generate-footer-logo.R`: A script that accepts template and logo file paths uses `glue` to replace `{LOGO}` with the correct URI representation
+- `generate-footer-logo.R`: A script that defines a function to convert footer template and logo files to a final footer file
 
 ### Boilerplate Code to Edit
 
