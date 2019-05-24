@@ -25,35 +25,45 @@ library(ggplot2)
 
 
 ```{r}
+# make fake data for plots ----
 points <- data.frame(x = 1:10, y = 1:10)
 distrb <- data.frame(x = rep(1:6, 10), y = rnorm(60, 0, 1))
+
+# make plots for themes ----
+g_points <- ggplot(points, aes(x, y, col = factor(x))) + geom_point(size = 5)
+g_distrb <- ggplot(distrb, aes(y, fill = factor(x))) + geom_density() + facet_wrap(. ~ x, ncol = 3)
+g_points_cont <- ggplot(points, aes(x, y, col = x)) + geom_point(size = 5)
 ```
 
 ## Discrete Palettes
 
-```{r}
-g_points <- ggplot(points, aes(x, y, col = factor(x))) + geom_point(size = 5)
-g_distrb <- ggplot(distrb, aes(y, fill = factor(x))) + geom_density() + facet_wrap(. ~ x, ncol = 3)
-```
+Consider the following plots:
 
 ```{r}
 g_points
 g_distrb
 ```
 
+Fixed-length discrete palettes use the palette's selected colors until they run out, then it uses grey for all additional levels of the aesthetic. 
+
 ```{r}
 g_points + scale_color_discrete_test()
-g_points + scale_color_discrint_test(points$x)
 g_distrb + scale_fill_discrete_test()
+```
+
+Interpolated palettes extent the discrete palette by interpolating additional values.
+
+```{r}
+g_points + scale_color_discrint_test(points$x)
 g_distrb + scale_fill_discrint_test(distrb$x)
 ```
 
+
 ## Continuous Palettes
 
-Now we will remake our scatterplot with the `color` aesthetic as a continuous variable to demonstrate our continuous scales.
+Consider the following plots:
 
 ```{r}
-g_points_cont <- ggplot(points, aes(x, y, col = x)) + geom_point(size = 5)
 g_points_cont
 ```
 

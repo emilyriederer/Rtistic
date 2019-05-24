@@ -21,9 +21,9 @@ Of course, depending on how much time you want to spend on this activity and whe
 
 Tactically, this may work the best if individuals break off into small groups to work on separate themes. Ideas of prompts could be each team creates their own theme for:
 
+- A monochromatic theme for each color of the rainbow
 - A character on a TV show
 - A season of the year
-- A monochromatic theme for each color of the rainbow
 
 ## Contents
 
@@ -119,6 +119,7 @@ Participant / Team Instructions:
 
 - If you have not already done so, make a copy of the `vignettes/my-gg-theme-vignette` in the same folder. Rename it as `{theme}-vignette.Rmd`
 - Find where the `gg_points` and `gg_distrb` plot objects are defined at the top of the script. Add onto this code with `+ theme_{theme}()` to apply your theme to the plots
+- Be sure to change any boilerplat text and update the vignette's title in the YAML header
 - Since vignettes serve as long-form documentation, add some descriptive text about what motivated this theme
 
 ### RMarkdown Theme Instructions
