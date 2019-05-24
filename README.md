@@ -55,9 +55,9 @@ Boilerplate package code exists in the `R/` and `inst/` directories:
 
 Boilerplate code also exists in the `vignettes/` directory:
 
-- `my-gg-theme-vignette.R`: contains an array of basic plots on which new themes can be demoed
+- `my-gg-theme-vignette.R`: contains an array of basic plots to demonstrate the new themes created
 
-These are the files that participants should ultimately save under new names, edit, and PR back to the package.
+These are the files that participants should ultimately save under new names, edit, and PR back to the package. Other files should not be edited.
 
 ## High-Level Process
 
@@ -90,16 +90,16 @@ Participant / Team Instructions:
 #### Defining the palette
 
 - Make a copy of the `R/my-gg-palette.R` file in the same folder. Rename it as `{theme}-palette.R` where `{theme}` represents something descriptive about your theme.
-- Change the definitions of the variables `pal`, `pal_cont`, and `pal_div`
-- Rename all the functions by appending `_{theme}` to the end of the name, using the same `{theme}` keyword as above
+- Change the definitions of the variables `test_pal`, `test_pal_cont`, and `test_pal_div` and rename the `test` prefix to something appropriate (probably the `{theme}` stub)
 - Update the documentation to describe your pallete
 - Save your file and run it locallly
 
 #### Documenting the palette
 
 - Make a copy of the `vignettes/my-gg-theme-vignette` in the same folder. Rename it as `{theme}-vignette.Rmd`
-- Change the existing `scale_color_*` and `scale_fill_*` functions to call the functions you have created to end with the suffix `_{theme}`
+- Change references to the test palette throughout and point them to your newly-defined palette
 - Run the vignette chunks interactively to view your palettes. Iterate between this file and the R script defining the palettes until you are happy with the results.
+- Be sure to change any boilerplat text and update the vignette's title in the YAML header
 - Since vignettes serve as long-form documentation, add some descriptive text about what this palette is meant to represent
 
 ### ggplot Theme Instructions
