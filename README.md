@@ -1,7 +1,5 @@
 # Rtistic <img src="man/figures/logo.png" align="right" height=140/>
 
-**THIS REPO IS A WORK IN PROGRESS - DO NOT CURRENTLY ATTEMPT TO USE!**
-
 ## Intro
 
 The goal of `Rtistic` is to provide an easy 'hackathon-in-a-box' activity groups of R users. Users can collaborate to create a collection of custom themes for `ggplot2` and RMarkddown.
