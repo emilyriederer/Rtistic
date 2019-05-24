@@ -27,6 +27,10 @@ Tactically, this may work the best if individuals break off into small groups to
 
 ## Contents
 
+### The Workhorse
+
+`R/palette-infrastructure.R` contains all of the fuctions that users will ultimately call to apply the different palettes. This should be left as-is except for renaming all the functions from `*_rtistic` to whatever is desirable.
+
 ### Scratchpad Files for Experimentation
 
 The following files are available in the `scratchpad/` directory to help with the design process by quickly iterating on style choices:
