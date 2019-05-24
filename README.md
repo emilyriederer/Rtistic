@@ -66,23 +66,23 @@ These are the files that participants should ultimately save under new names, ed
 Admin Instructions:
 
 - Fork this repo to your account
-- Clone the repo to your computer (`git clone {{put HTTPS URL here}}`)
+- Clone the repo to your computer (`git clone {put HTTPS URL here}`)
 - Replace all mentions of the package name (`Rtistic`) to your desired package name
   + If you're using RStudio, you can find all mentions of the name with `Ctrl+Shift+F`
   + Be sure to use the `available` package to make sure your name does not conflict with an existing package
-- Create a new repo for your hackathon package and repoint your local repo to it (`git remote set-url origin {{put HTTPS URL here}}`)
+- Create a new repo for your hackathon package and repoint your local repo to it (`git remote set-url origin {put HTTPS URL here}`)
 - Help teams keep their work clean and modular and review PRs carefully as they come in
 - As a finals step, consider making a basic `pkgdown` site with all of the themes. Vignettes created by individual teams will beome articles to display all of the different new themes as a "gallery"
 
 Participant / Team Instructions:
 
 - Fork the repo (on GitHub) created by the admin
-- Clone the repo to your computer (`git clone {{put HTTPS URL here}}`)
+- Clone the repo to your computer (`git clone {put HTTPS URL here}`)
 - Create a new branch to work in (`git checkout -b my-new-theme` will create a branch called `my-new-theme`)
 - Play in the `scratchpad/` directory to determine CSS and `ggplot2` options that you like
 - Review the files in the `R/` and `inst/` folders and migrate your options accordingly
-- Commit regularly as you make changes with informative messages (`git commit -m "{{what you changed}}"`)
-- When you're ready to submit, push back to your github branch (`git push origin {{your branch name}}`)
+- Commit regularly as you make changes with informative messages (`git commit -m "{describe what you changed}"`)
+- When you're ready to submit, push back to your github branch (`git push origin my-new-theme` - or whatever your branch is called)
 - On GitHub, create a pull request with yor changes back to the main repo
 
 ## Detailed Instructions for Participants
