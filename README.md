@@ -134,14 +134,17 @@ Participant / Team Instructions:
 
 #### Defining a footer for your theme
 
-- Make a copy of the `my-footer-template.html` file in the same folder. Rename is as `{theme}-footer-template.html`. Edit this to represent what your footer should look like. 
-
 *If your footer has a logo:*
 
+- Make a copy of the `footer-helpers/my-footer-template.html` file in the same folder. Rename is as `{theme}-footer-template.html`. Edit this to represent what your footer should look like. 
 - Use `{LOGO}` (**including** the curly braces) as a placeholder for where the logo should go in the HTML template.
 - Add a logo to the `footer-helpers` folder 
 - Run the code in the `generate_footer_logo.R` file to locally definie the `generate_footer_logo()` function
 - Read this functions documentation. Then run it by passing in the paths to your template and logo. Send the final output to `inst/rmarkdown/resources/{theme}-footer.html`
+
+*If your footer does not have a logo*
+
+- - Make a copy of the `inst/rmarkdown/resources/my-footer.html` file in the same folder. Rename is as `{theme}-footer.html`. Edit this to represent what your footer should look like. 
 
 #### Defining the theme
 
