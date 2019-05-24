@@ -31,8 +31,8 @@
 #'
 #' @export
 
-theme_test <- function(base_theme = ggplot2::theme_minimal) {
+my_theme <- function(base_theme = ggplot2::theme_minimal) {
 
-  base_theme
+  base_theme()
 
 }

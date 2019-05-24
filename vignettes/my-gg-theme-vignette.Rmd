@@ -35,6 +35,31 @@ g_distrb <- ggplot(distrb, aes(y, fill = factor(x))) + geom_density() + facet_wr
 g_points_cont <- ggplot(points, aes(x, y, col = x)) + geom_point(size = 5)
 ```
 
+## Motivation for this Theme
+
+ADD SOMETHING HERE!
+
+## Key Colors
+
+The colors in the discrete palette are:
+
+```{r}
+scales::show_col(test_pal)
+```
+
+The colors used to define the conintuous palette spectrum are:
+
+```{r}
+scales::show_col(test_pal_cont)
+```
+
+The colors used in the diverging palette are:
+
+```{r}
+scales::show_col(test_pal_div)
+```
+
+
 ## Discrete Palettes
 
 Consider the following plots:
@@ -47,15 +72,15 @@ g_distrb
 Fixed-length discrete palettes use the palette's selected colors until they run out, then it uses grey for all additional levels of the aesthetic. 
 
 ```{r}
-g_points + scale_color_discrete_test()
-g_distrb + scale_fill_discrete_test()
+g_points + scale_color_discrete_rtistic(palette = "test")
+g_distrb +  scale_fill_discrete_rtistic(palette = "test")
 ```
 
 Interpolated palettes extent the discrete palette by interpolating additional values.
 
 ```{r}
-g_points + scale_color_discrint_test(points$x)
-g_distrb + scale_fill_discrint_test(distrb$x)
+g_points + scale_color_discrete_rtistic(palette = "test", extend = TRUE)
+g_distrb + scale_fill_discrete_rtistic(palette = "test", extend = TRUE)
 ```
 
 
@@ -70,12 +95,18 @@ g_points_cont
 Diverging palettes grow more extreme at the endpoints. You can specify the `midpoint` of where the center should be. 
 
 ```{r}
-g_points_cont + scale_color_contdiv_test(midpoint = 5)
+g_points_cont + scale_color_continuous_div_rtistic(palette = "test", midpoint = 5)
 ```
 
 Normal continuous scales gradually move between two ends of a spectrum.
 
 ```{r}
-g_points_cont + scale_color_cont_test()
+g_points_cont + scale_color_continuous_rtistic(palette = "test")
+```
+
+## Plot Theme
+
+```{r}
+g_points + my_theme()
 ```
 

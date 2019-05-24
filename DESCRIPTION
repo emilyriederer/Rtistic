@@ -8,9 +8,16 @@ Authors@R:
            email = "first.last@example.com")
 Description: What the package does (one paragraph).
 License: What license it uses
+Imports: 
+    ggplot2,
+    glue,
+    grDevices,
+    rmarkdown,
+    scales
+Suggests: 
+    knitr
+VignetteBuilder: 
+    knitr
 Encoding: UTF-8
 LazyData: true
-Suggests: 
-    knitr,
-    rmarkdown
-VignetteBuilder: knitr
+RoxygenNote: 6.1.1
