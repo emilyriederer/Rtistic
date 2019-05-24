@@ -1,4 +1,4 @@
-#' A test palette
+#' Test palette
 #'
 #' This is a test palette inspired by stop-light colors
 #'

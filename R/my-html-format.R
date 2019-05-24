@@ -1,11 +1,11 @@
-#' Custom HTML template
+#' Test HTML template
 #'
 #' Loads additional style and template file
 #'
-#' From: https://raw.githubusercontent.com/dr-harper/example-rmd-templates/master/R/my_html_format.R
+#' @references https://raw.githubusercontent.com/dr-harper/example-rmd-templates/master/R/my_html_format.R
 #'
 #' @param toc should a table of contents be displayed?
-#' @param ... additional arguments provided to \@code{html_document}
+#' @param ... additional arguments provided to \code{html_document}
 #' @export
 #'
 my_html_format = function(toc = TRUE, ...) {

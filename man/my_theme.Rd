@@ -2,7 +2,7 @@
 % Please edit documentation in R/my-gg-theme.R
 \name{my_theme}
 \alias{my_theme}
-\title{Pomological Theme}
+\title{Test ggplot theme}
 \usage{
 my_theme(base_theme = ggplot2::theme_minimal)
 }
@@ -11,41 +11,20 @@ my_theme(base_theme = ggplot2::theme_minimal)
 [ggplot2::theme_minimal()]. Any elements set by `theme_pomological()` will
 overwrite the `base_theme` unless the specific parameter is explicitly set
 to `NULL`.}
-
-\item{base_family}{Base text family. See **Fonts** in [theme_pomological()]
-for some examples from Google Fonts options, including `"Mr De Haviland"`,
-`"Homemade Apple"`, `"Marck Script"`, and `"Mr. Bedfort"`. For the
-authentic pomological look, use `"Homemade Apple"` or `"Mr De Haviland"`.
-Set to `NULL` or use [theme_pomological_plain()] for no change to fonts.}
-
-\item{base_size}{Base text size}
-
-\item{text.color}{Color of all text (except axis text, see `axis.text.color`)}
-
-\item{plot.background.color}{Color of plot background, passed to `plot.background`}
-
-\item{panel.border.color}{Color of plot panel border}
-
-\item{with.panel.grid}{If `FALSE` gridlines in plot are removed}
-
-\item{panel.grid.color, panel.grid.linetype}{Color and linetype of panel grid, passed to `panel.grid`}
-
-\item{axis.text.color, axis.text.size}{Color and size of axis text}
 }
 \description{
-[ggplot2] plot theme based on the USDA Pomological Watercolors paintings.
+[ggplot2] plot theme based on...
 }
 \examples{
+\dontrun{
 library(ggplot2)
-basic_iris_plot <- ggplot(iris) +
-  aes(x = Sepal.Length, y = Sepal.Width, color = Species) +
-  geom_point(size = 2) +
-  # with pomological color scale
-  scale_color_pomological()
+data <- data.frame(x = 1:10, y = 1:10)
+ggplot(data, x, y) + geom_point() + my_theme()
+}
 
 }
 \references{
-https://usdawatercolors.nal.usda.gov/pom
+https://github.com/gadenbuie/ggpomological/blob/master/R/scale_pomological.R
 }
 \seealso{
 [ggplot2::theme]

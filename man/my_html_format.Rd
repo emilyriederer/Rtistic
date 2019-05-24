@@ -2,18 +2,18 @@
 % Please edit documentation in R/my-html-format.R
 \name{my_html_format}
 \alias{my_html_format}
-\title{Custom HTML template}
+\title{Test HTML template}
 \usage{
 my_html_format(toc = TRUE, ...)
 }
 \arguments{
 \item{toc}{should a table of contents be displayed?}
 
-\item{...}{additional arguments provided to \@code{html_document}}
+\item{...}{additional arguments provided to \code{html_document}}
 }
 \description{
 Loads additional style and template file
 }
-\details{
-From: https://raw.githubusercontent.com/dr-harper/example-rmd-templates/master/R/my_html_format.R
+\references{
+https://raw.githubusercontent.com/dr-harper/example-rmd-templates/master/R/my_html_format.R
 }
