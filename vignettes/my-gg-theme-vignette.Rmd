@@ -106,7 +106,7 @@ g_points_cont
 Diverging palettes grow more extreme at the endpoints. You can specify the `midpoint` of where the center should be. 
 
 ```{r}
-g_points_cont + scale_color_continuous_div_rtistic(palette = "test", midpoint = 5)
+g_points_cont + scale_color_diverging_rtistic(palette = "test", midpoint = 5)
 ```
 
 Normal continuous scales gradually move between two ends of a spectrum.

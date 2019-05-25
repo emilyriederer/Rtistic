@@ -6,7 +6,7 @@
 #' \itemize{
 #' \item{scale_(color/colour/fill)_discrete_rtistic}{Discrete palette with either fixed or dynamically extended number of shades}
 #' \item{scale_(color/colour/fill)_opinionated_rtistic}{Discrete palette with specific values for "good", "bad", and "neutral"}
-#' \item{scale_(color/colour/fill)_continuous_div_rtistic}{Continuous diverging color palette}
+#' \item{scale_(color/colour/fill)_diverging_rtistic}{Continuous diverging color palette}
 #' \item{scale_(color/colour/fill)_continuous}{COntinuous color palette}
 #' }
 #'
@@ -71,7 +71,7 @@ scale_fill_opinionated_rtistic <- function(palette = "test", ...){
 
 #' @rdname scale_custom
 #' @export
-scale_color_continuous_div_rtistic <- function(palette = "test", ...) {
+scale_color_diverging_rtistic <- function(palette = "test", ...) {
 
   pal <- utils::getFromNamespace(paste0(palette, "_pal_div"), "Rtistic")
   ggplot2::scale_colour_gradient2(low = pal[3], mid = pal[2], high = pal[1],...)
@@ -80,11 +80,11 @@ scale_color_continuous_div_rtistic <- function(palette = "test", ...) {
 
 #' @rdname scale_custom
 #' @export
-scale_colour_continuous_div_rtistic <- scale_color_continuous_div_rtistic
+scale_colour_diverging_rtistic <- scale_color_diverging_rtistic
 
 #' @rdname scale_custom
 #' @export
-scale_fill_continuous_div_rtistic <- function(palette = "test", ...) {
+scale_fill_diverging_rtistic <- function(palette = "test", ...) {
 
   pal <- utils::getFromNamespace(paste0(palette, "_pal_div"), "Rtistic")
   ggplot2::scale_fill_gradient2(low = pal[3], mid = pal[2], high = pal[1],...)
