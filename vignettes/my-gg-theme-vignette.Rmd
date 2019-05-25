@@ -76,12 +76,23 @@ g_points + scale_color_discrete_rtistic(palette = "test")
 g_distrb +  scale_fill_discrete_rtistic(palette = "test")
 ```
 
-Interpolated palettes extent the discrete palette by interpolating additional values.
+Interpolated palettes extend the discrete palette by interpolating additional values.
 
 ```{r}
 g_points + scale_color_discrete_rtistic(palette = "test", extend = TRUE)
 g_distrb + scale_fill_discrete_rtistic(palette = "test", extend = TRUE)
 ```
+
+Opinionated palettes color specific values for "good", "bad", and "neutral" in your dataset. 
+
+```{r}
+points$assessment <- "neutral"
+points$assessment[points$x > 5] <- "good"
+points$assessment[points$x < 3] <- "bad"
+
+ggplot(points, aes(x, y, col = assessment)) + geom_point() + scale_color_opinionated_rtistic(palette = "test")
+```
+
 
 
 ## Continuous Palettes

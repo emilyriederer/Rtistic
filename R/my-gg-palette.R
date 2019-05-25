@@ -18,6 +18,15 @@ test_pal <- c(
 
 #' @name test_pal
 #' @export
+# Define opinionated discrete palette
+test_pal_op <- c(
+  "good" = test_pal[1],
+  "bad"  = test_pal[4],
+  "neutral" = "grey50"
+)
+
+#' @name test_pal
+#' @export
 # Define two colors for endpoints of continuous palette
 test_pal_cont <- c(test_pal[1], test_pal[2])
 

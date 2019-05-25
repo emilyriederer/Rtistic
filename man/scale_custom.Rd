@@ -5,11 +5,14 @@
 \alias{scale_color_discrete_rtistic}
 \alias{scale_colour_discrete_rtistic}
 \alias{scale_fill_discrete_rtistic}
-\alias{scale_colour_continuous_div_rtistic}
+\alias{scale_color_opinionated_rtistic}
+\alias{scale_colour_opinionated_rtistic}
+\alias{scale_fill_opinionated_rtistic}
 \alias{scale_color_continuous_div_rtistic}
+\alias{scale_colour_continuous_div_rtistic}
 \alias{scale_fill_continuous_div_rtistic}
-\alias{scale_colour_continuous_rtistic}
 \alias{scale_color_continuous_rtistic}
+\alias{scale_colour_continuous_rtistic}
 \alias{scale_fill_continuous_rtistic}
 \title{Custom Color and Fill Scales}
 \usage{
@@ -19,15 +22,21 @@ scale_colour_discrete_rtistic(palette = "test", extend = FALSE, ...)
 
 scale_fill_discrete_rtistic(palette = "test", extend = FALSE, ...)
 
-scale_colour_continuous_div_rtistic(palette = "test", ...)
+scale_color_opinionated_rtistic(palette = "test", ...)
+
+scale_colour_opinionated_rtistic(palette = "test", extend = FALSE, ...)
+
+scale_fill_opinionated_rtistic(palette = "test", ...)
 
 scale_color_continuous_div_rtistic(palette = "test", ...)
 
+scale_colour_continuous_div_rtistic(palette = "test", ...)
+
 scale_fill_continuous_div_rtistic(palette = "test", ...)
 
-scale_colour_continuous_rtistic(palette = "test", ...)
-
 scale_color_continuous_rtistic(palette = "test", ...)
+
+scale_colour_continuous_rtistic(palette = "test", ...)
 
 scale_fill_continuous_rtistic(palette = "test", ...)
 }
@@ -45,6 +54,7 @@ Custom coloring and filling functions based on unique color palettes
 Specific functions include:
 \itemize{
 \item{scale_(color/colour/fill)_discrete_rtistic}{Discrete palette with either fixed or dynamically extended number of shades}
+\item{scale_(color/colour/fill)_opinionated_rtistic}{Discrete palette with specific values for "good", "bad", and "neutral"}
 \item{scale_(color/colour/fill)_continuous_div_rtistic}{Continuous diverging color palette}
 \item{scale_(color/colour/fill)_continuous}{COntinuous color palette}
 }

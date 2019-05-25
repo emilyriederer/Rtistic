@@ -50,7 +50,7 @@ Including a logo or image in a self-contained RMarkdown requires translating tha
 
 Boilerplate package code exists in the `R/` and `inst/` directories:
 
-- `my-gg-palette.R`: Defines colors of choice and uses them to create discrete (fixed number and interpolated) and continuous (monotonic and diverging) color palettes
+- `my-gg-palette.R`: Defines colors of choice and uses them to create discrete (fixed number, interpolated, and opinionated) and continuous (monotonic and diverging) color palettes
 - `my-gg-theme.R`: Defines theme function for custom `ggplot2`s
 - `my-html-format.R`: Defines render function for custom RMarkdown themes. This depends upon:
   + `inst/rmarkdown/resources/footer.html`: Custom HTML footer for inclusion in RMarkdown

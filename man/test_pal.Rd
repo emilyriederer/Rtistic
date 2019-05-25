@@ -3,12 +3,15 @@
 \docType{data}
 \name{test_pal}
 \alias{test_pal}
+\alias{test_pal_op}
 \alias{test_pal_cont}
 \alias{test_pal_div}
 \title{Test palette}
 \format{An object of class \code{character} of length 4.}
 \usage{
 test_pal
+
+test_pal_op
 
 test_pal_cont
 
