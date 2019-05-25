@@ -49,7 +49,8 @@ scale_fill_discrete_rtistic <- function(palette = "test", extend = FALSE, ...){
 #' @export
 scale_color_opinionated_rtistic <- function(palette = "test", ...){
 
-  pal <- utils::getFromNamespace(paste0(palette, "_pal_op"), "Rtistic")
+  pal <- utils::getFromNamespace(paste0(palette, "_pal_op"), "Rtistic")[1:3]
+  names(pal) <- c("good", "neutral", "bad")
   ggplot2::scale_color_manual(values = pal, ...)
 
 }
@@ -62,7 +63,8 @@ scale_colour_opinionated_rtistic <- scale_color_discrete_rtistic
 #' @export
 scale_fill_opinionated_rtistic <- function(palette = "test", ...){
 
-  pal <- utils::getFromNamespace(paste0(palette, "_pal_op"), "Rtistic")
+  pal <- utils::getFromNamespace(paste0(palette, "_pal_op"), "Rtistic")[1:3]
+  names(pal) <- c("good", "neutral", "bad")
   ggplot2::scale_fill_manual(values = pal, ...)
 
 }

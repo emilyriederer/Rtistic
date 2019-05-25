@@ -18,12 +18,8 @@ test_pal <- c(
 
 #' @name test_pal
 #' @export
-# Define opinionated discrete palette
-test_pal_op <- c(
-  "good" = test_pal[1],
-  "bad"  = test_pal[4],
-  "neutral" = "grey50"
-)
+# Define opinionated discrete palette (good, neutral, bad)
+test_pal_op <- c(test_pal[1], "grey50", test_pal[4])
 
 #' @name test_pal
 #' @export

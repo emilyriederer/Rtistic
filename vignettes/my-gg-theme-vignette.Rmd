@@ -117,7 +117,9 @@ g_points_cont + scale_color_continuous_rtistic(palette = "test")
 
 ## Plot Theme
 
+Color palettes pair nicely with the corresponding theme.
+
 ```{r}
-g_points + my_theme()
+g_points + scale_color_discrete_rtistic(palette = "test", extend = TRUE) + my_theme()
 ```
 
