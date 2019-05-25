@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "first.last@example.com")
 Description: What the package does (one paragraph).
-License: What license it uses
+License: CC0
 Imports: 
     ggplot2,
     glue,

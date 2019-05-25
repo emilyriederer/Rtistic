@@ -31,8 +31,23 @@ scale_color_continuous_rtistic(palette = "test", ...)
 
 scale_fill_continuous_rtistic(palette = "test", ...)
 }
+\arguments{
+\item{palette}{Name of color palette}
+
+\item{extend}{Whether to extend discrete color palette to make sufficient colors for levels needed}
+
+\item{...}{Additional arguments to be passed to internal scale function}
+}
 \description{
-Custom coloring and filling functions based on unique palettes
+Custom coloring and filling functions based on unique color palettes
+}
+\details{
+Specific functions include:
+\itemize{
+\item{scale_(color/colour/fill)_discrete_rtistic}{Discrete palette with either fixed or dynamically extended number of shades}
+\item{scale_(color/colour/fill)_continuous_div_rtistic}{Continuous diverging color palette}
+\item{scale_(color/colour/fill)_continuous}{COntinuous color palette}
+}
 }
 \references{
 https://en.wikipedia.org/wiki/Traffic_light
