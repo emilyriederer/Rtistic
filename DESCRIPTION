@@ -1,16 +1,15 @@
 Package: Rtistic
-Title: What the Package Does (One Line, Title Case)
+Title: A collection of custom palettes and themes for ggplot2 and RMarkdown
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Emily",
+           family = "Riederer",
            role = c("aut", "cre"),
-           email = "first.last@example.com")
+           email = "emilyriederer@gmail.com")
 Description: What the package does (one paragraph).
 License: CC0
 Imports: 
     ggplot2,
-    glue,
     grDevices,
     rmarkdown,
     scales

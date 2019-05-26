@@ -14,11 +14,11 @@
 #' @importFrom glue glue
 #'
 #' @example {
-#' generate_footer_logo(
-#'   logo_path = "footer-helpers/my-logo.png",
-#'   temp_path = "footer-helpers/my-footer-template.html",
-#'   foot_path = "inst/rmarkdown/resources/my-footer.html"
-#'   )
+# generate_footer_logo(
+#   logo_path = "footer-helpers/my-logo.png",
+#   temp_path = "footer-helpers/my-footer-template.html",
+#   foot_path = "inst/rmarkdown/resources/my-footer.html"
+#   )
 #' }
 
 generate_footer_logo <- function(logo_path, temp_path, foot_path) {
@@ -29,7 +29,7 @@ generate_footer_logo <- function(logo_path, temp_path, foot_path) {
 
   # insert logo html into footer template ----
   footer_template_html = paste(readLines(temp_path), collapse = "\n")
-  footer_html = glue::glue(footer_template_html, LOGO = logo_html)
+  footer_html = gsub(pattern = "\\{LOGO\\}", replacement = logo_html, footer_template_html)
 
   # write to file ----
   xfun::write_utf8(footer_html, foot_path)
