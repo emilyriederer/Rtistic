@@ -74,7 +74,7 @@ Admin Instructions:
   + Be sure to use the `available` package to make sure your name does not conflict with an existing package
 - Create a new repo for your hackathon package and repoint your local repo to it (`git remote set-url origin {put HTTPS URL here}`)
 - Help teams keep their work clean and modular and review PRs carefully as they come in
-- As a finals step, consider making a basic `pkgdown` site with all of the themes. Vignettes created by individual teams will beome articles to display all of the different new themes as a "gallery"
+- As a finals step, consider making a basic `pkgdown` site with all of the themes. Vignettes created by individual teams will beome articles to display all of the different new themes as a "gallery". (For help *also* customizing this, you'll find a template style sheet in `pkgdown/extra.css`)
 
 Participant / Team Instructions:
 
