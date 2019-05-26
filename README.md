@@ -29,7 +29,14 @@ Tactically, this may work the best if individuals break off into small groups to
 
 ### The Workhorse
 
-`R/palette-infrastructure.R` contains all of the fuctions that users will ultimately call to apply the different palettes. This should be left as-is except for renaming all the functions from `*_rtistic` to whatever is desirable.
+`R/palette-infrastructure.R` contains all of the fuctions that users will ultimately call to apply the different palettes. This should be left as-is except for renaming all the functions from `*_rtistic` to whatever is desirable. Specifically, it defines the following scales:
+
+- `scale_(color/colour/fill)_discrete_rtistic(palette = "test", extend = FALSE)`
+- `scale_(color/colour/fill)_opinionated_rtistic(palette = "test")`
+- `scale_(color/colour/fill)_continuous_rtistic(palette = "test")`
+- `scale_(color/colour/fill)_diverging_rtistic(palette = "test", midpoint = 5)`
+
+Additionally, to help keep track of all of the community-contributed themes, it provides the `get_rtistic_palettes()` function which prints out a characted vector of the names of available palettes (based on scanning the package namespace for objects ending in "`_pal`")
 
 ### Scratchpad Files for Experimentation
 

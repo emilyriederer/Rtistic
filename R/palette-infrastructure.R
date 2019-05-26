@@ -117,7 +117,20 @@ scale_fill_continuous_rtistic <- function(palette = "test", ...) {
 
 }
 
-# HELPER ----
+# HELPERS ----
+
+#' Get names of all unique palettes provided in Rtistic
+#'
+#' @return Vector of palette name stubs
+#' @export
+#'
+#' @examples get_rtistic_palettes()
+
+get_rtistic_palettes <- function(){
+
+  unique(sub("_pal.*", "", grep("^.*_pal$", getNamespaceExports("Rtistic"), value = TRUE)))
+
+}
 
 #' @keywords internal
 manual_pal_flex <- function(values, extend = FALSE){
