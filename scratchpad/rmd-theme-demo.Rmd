@@ -10,17 +10,11 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
 ```{css}
 /*you can include comments in CSS code like this!*/
   
 body{
-  
+  background-color: lightblue;
 }
 
 h1 {
@@ -31,6 +25,16 @@ h2 {
   color: blue;
 }
 
+/*use . to modify tags of a certain class*/
+.myclass {
+  color: purple;
+  font-weight: bold;
+}
+
+/*use the hashtag to modify a tag with a certain id*/
+#cool {
+  font-style: italic;
+}
 
 /* use commas to select multiple elements at once */
 h3, h4, h5, h6 {
@@ -46,47 +50,44 @@ h3, h4, h5, h6 {
   background: magenta;
   face: bold;
 }
+
 ```
 
-## Including Plots
+# This is a Header 1 (h1)
 
 Text text text
 
-### Subsection 1 
+## This is a Header 2 (h2)
 
-More text
+Text text text
 
-### Subsection 2
+## This is another Header 2 (h2)
 
-More text
+Text text text
+
+### This is a Header 3 (h3)
+
+Text text text
+
+# This is another Header 1 (h1)
+
+Text text text
 
 ## A Tabbed Section {.tabset .tabset-fade .tabset-pills}
 
 Text text text
 
-### Subsection 1
+### Tab
 
 More text
 
-### Subsection 2
+### Another Tab
 
 More text
 
-## Custom Class {.myclass}
+## A Custom Class (.myclass) {.myclass}
 
-Text text text
-
-### Subsection 1
-
-More text
-
-### Subsection 2
-
-More text
-
-## Custom Class Used Again {.myclass}
-
-Text text text
+Note that the classes you specify in markdown relate to the section under the header not the header itself!
 
 ### Subsection 1
 
@@ -96,9 +97,21 @@ More text
 
 More text
 
-## Custom ID {#cool}
+## Header with Same Custom Class (.myclass) {.myclass}
 
-Text text text
+Note that the classes you specify in markdown relate to the section under the header not the header itself!
+
+### Subsection 1
+
+More text
+
+### Subsection 2
+
+More text
+
+## Custom ID (#cool) {#cool}
+
+Note that the IDs you specify in markdown relate to the section under the header not the header itself!
 
 ### Subsection 1
 
