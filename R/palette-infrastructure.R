@@ -183,6 +183,12 @@ retrieve_palette <- function(name, type = c("base", "op", "div", "cont")){
 
   # if any palette succeeds, validate it is of needed length
   if (length(pal) == 2 & type %in% c("div", "op")) {
+
+    warning("Palette has length of two. ",
+            "To use with this scale, it has been modified. ",
+            "Inspect your plot to ensure the resulting scale makes sense. ",
+            call. = FALSE)
+
     pal <- c(pal[1], "darkgrey", pal[2])
   }
   if (length(pal) == 1) {
