@@ -25,7 +25,7 @@ NULL
 #' @export
 scale_color_discrete_rtistic <- function(palette = "test", extend = FALSE, ...){
 
-  pal <- utils::getFromNamespace(paste0(palette, "_pal"), "Rtistic")
+  pal <- retrieve_palette(palette, "base")
   ggplot2::discrete_scale("colour", "test", manual_pal_flex(pal, extend), na.value = "grey50", ...)
 
 }
@@ -38,7 +38,7 @@ scale_colour_discrete_rtistic <- scale_color_discrete_rtistic
 #' @export
 scale_fill_discrete_rtistic <- function(palette = "test", extend = FALSE, ...){
 
-  pal <- utils::getFromNamespace(paste0(palette, "_pal"), "Rtistic")
+  pal <- retrieve_palette(palette, "base")
   ggplot2::discrete_scale("fill", "test", manual_pal_flex(pal, extend), na.value = "grey50", ...)
 
 }
@@ -49,7 +49,7 @@ scale_fill_discrete_rtistic <- function(palette = "test", extend = FALSE, ...){
 #' @export
 scale_color_opinionated_rtistic <- function(palette = "test", ...){
 
-  pal <- utils::getFromNamespace(paste0(palette, "_pal_op"), "Rtistic")[1:3]
+  pal <- retrieve_palette(palette, "op")[1:3]
   names(pal) <- c("good", "neutral", "bad")
   ggplot2::scale_color_manual(values = pal, ...)
 
@@ -63,7 +63,7 @@ scale_colour_opinionated_rtistic <- scale_color_discrete_rtistic
 #' @export
 scale_fill_opinionated_rtistic <- function(palette = "test", ...){
 
-  pal <- utils::getFromNamespace(paste0(palette, "_pal_op"), "Rtistic")[1:3]
+  pal <- retrieve_palette(palette, "op")[1:3]
   names(pal) <- c("good", "neutral", "bad")
   ggplot2::scale_fill_manual(values = pal, ...)
 
@@ -75,7 +75,7 @@ scale_fill_opinionated_rtistic <- function(palette = "test", ...){
 #' @export
 scale_color_diverging_rtistic <- function(palette = "test", ...) {
 
-  pal <- utils::getFromNamespace(paste0(palette, "_pal_div"), "Rtistic")
+  pal <- retrieve_palette(palette, "div")
   ggplot2::scale_colour_gradient2(low = pal[3], mid = pal[2], high = pal[1],...)
 
 }
@@ -88,7 +88,7 @@ scale_colour_diverging_rtistic <- scale_color_diverging_rtistic
 #' @export
 scale_fill_diverging_rtistic <- function(palette = "test", ...) {
 
-  pal <- utils::getFromNamespace(paste0(palette, "_pal_div"), "Rtistic")
+  pal <- retrieve_palette(palette, "div")
   ggplot2::scale_fill_gradient2(low = pal[3], mid = pal[2], high = pal[1],...)
 
 }
@@ -99,7 +99,7 @@ scale_fill_diverging_rtistic <- function(palette = "test", ...) {
 #' @export
 scale_color_continuous_rtistic <- function(palette = "test", ...) {
 
-  pal <- utils::getFromNamespace(paste0(palette, "_pal_cont"), "Rtistic")
+  pal <- retrieve_palette(palette, "cont")
   ggplot2::scale_colour_gradient(low = pal[1], high = pal[2],...)
 
 }
@@ -112,7 +112,7 @@ scale_colour_continuous_rtistic <- scale_color_continuous_rtistic
 #' @export
 scale_fill_continuous_rtistic <- function(palette = "test", ...) {
 
-  pal <- utils::getFromNamespace(paste0(palette, "_pal_cont"), "Rtistic")
+  pal <- retrieve_palette(palette, "cont")
   ggplot2::scale_fill_gradient(low = pal[1], high = pal[2],...)
 
 }
@@ -132,6 +132,7 @@ get_rtistic_palettes <- function(){
 
 }
 
+#' Create additional colors from palette as needed
 #' @keywords internal
 manual_pal_flex <- function(values, extend = FALSE){
 
@@ -151,4 +152,49 @@ manual_pal_flex <- function(values, extend = FALSE){
       values[seq_len(n)]
     }
 
+}
+
+#' Retrieve palette with reasonable defaults upon failure
+#' Tries for specific request, else tries to default to base, else fails
+#' Also checks palette length meets fx requirements, else modifies
+#' @keywords internal
+retrieve_palette <- function(name, type = c("base", "op", "div", "cont")){
+
+  match.arg(type)
+
+  # attempt to get palette requrested
+  pal_base <- paste0(name, "_pal")
+  pal_name <- if (type == "base") pal_base else paste0(name,"_pal_",type)
+  pal <- try(utils::getFromNamespace(pal_name, "Rtistic"))
+
+  # if fails, attempt to use base palette
+  if (class(pal) == "try-error") {
+    pal <- try(utils::getFromNamespace(pal_base, "Rtistic"))
   }
+
+  # if base fails, throw error
+  if (class(pal) == "try-error") {
+    stop("No such palette exists. ",
+         "Run get_rtistic_palettes() to see options. ",
+         call. = FALSE)
+  }
+
+  # if any palette succeeds, validate it is of needed length
+  if (length(pal) == 2 & type %in% c("div", "op")) {
+    pal <- c(pal[1], "darkgrey", pal[2])
+  }
+  if (length(pal) == 1) {
+
+    warning("Palette has length of one. ",
+            "Colors will be repeated. ",
+            call. = FALSE)
+
+    if (type %in% c("base", "cont")) pal <- c(pal, pal)
+    else pal <- c(pal, "darkgrey", pal)
+
+  }
+
+  return(pal)
+
+
+}
