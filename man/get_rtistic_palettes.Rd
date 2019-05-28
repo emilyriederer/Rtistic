@@ -4,7 +4,10 @@
 \alias{get_rtistic_palettes}
 \title{Get names of all unique palettes provided in Rtistic}
 \usage{
-get_rtistic_palettes()
+get_rtistic_palettes(full = FALSE)
+}
+\arguments{
+\item{full}{Whether to include full palette names (with suffixes, e.g. \code{_cont}) or just stubs}
 }
 \value{
 Vector of palette name stubs

@@ -113,7 +113,7 @@ scale_colour_continuous_rtistic <- scale_color_continuous_rtistic
 scale_fill_continuous_rtistic <- function(palette = "test", ...) {
 
   pal <- retrieve_palette(palette, "cont")
-  ggplot2::scale_fill_gradient(low = pal[1], high = pal[2],...)
+  ggplot2::scale_fill_gradient(low = pal[1], high = pal[2], ...)
 
 }
 
@@ -121,14 +121,16 @@ scale_fill_continuous_rtistic <- function(palette = "test", ...) {
 
 #' Get names of all unique palettes provided in Rtistic
 #'
+#' @param full Whether to include full palette names (with suffixes, e.g. \code{_cont}) or just stubs
 #' @return Vector of palette name stubs
 #' @export
 #'
 #' @examples get_rtistic_palettes()
 
-get_rtistic_palettes <- function(){
+get_rtistic_palettes <- function(full = FALSE){
 
-  unique(sub("_pal.*", "", grep("^.*_pal$", getNamespaceExports("Rtistic"), value = TRUE)))
+  re <- if (full) "^.*_pal(_op|_cont|_div)?$" else "^.*_pal$"
+  grep(re, getNamespaceExports("Rtistic"), value = TRUE)
 
 }
 
