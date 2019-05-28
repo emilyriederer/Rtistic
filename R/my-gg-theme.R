@@ -2,7 +2,7 @@
 #'
 #' [ggplot2] plot theme based on...
 #'
-#' @references https://github.com/gadenbuie/ggpomological/blob/master/R/scale_pomological.R
+#' @references https://github.com/gadenbuie/ggpomological/blob/master/R/theme_pomological.R
 #' @seealso [ggplot2::theme]
 #' @param base_theme Starting theme of plot, default is
 #'   [ggplot2::theme_minimal()]. Any elements set by `theme_pomological()` will
@@ -18,8 +18,12 @@
 #'
 #' @export
 
-my_theme <- function(base_theme = ggplot2::theme_minimal) {
+my_theme <- function(base_theme = ggplot2::theme_minimal()) {
 
-  base_theme()
+  base_theme +
+  ggplot2::theme(
+    title = ggplot2::element_text(hjust = 0.5, vjust = 0.5),
+    plot.background = ggplot2::element_rect(fill = "lightblue")
+  )
 
 }
