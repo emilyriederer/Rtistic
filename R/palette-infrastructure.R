@@ -134,7 +134,7 @@ get_rtistic_palettes <- function(full = FALSE){
 
 }
 
-#' Create additional colors from palette as needed
+# Create additional colors from palette as needed
 #' @keywords internal
 manual_pal_flex <- function(values, extend = FALSE){
 
@@ -156,9 +156,9 @@ manual_pal_flex <- function(values, extend = FALSE){
 
 }
 
-#' Retrieve palette with reasonable defaults upon failure
-#' Tries for specific request, else tries to default to base, else fails
-#' Also checks palette length meets fx requirements, else modifies
+# Retrieve palette with reasonable defaults upon failure
+# Tries for specific request, else tries to default to base, else fails
+# Also checks palette length meets fx requirements, else modifies
 #' @keywords internal
 retrieve_palette <- function(name, type = c("base", "op", "div", "cont")){
 
