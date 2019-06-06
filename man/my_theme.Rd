@@ -4,7 +4,7 @@
 \alias{my_theme}
 \title{Test ggplot theme}
 \usage{
-my_theme(base_theme = ggplot2::theme_minimal)
+my_theme(base_theme = ggplot2::theme_minimal())
 }
 \arguments{
 \item{base_theme}{Starting theme of plot, default is
@@ -19,12 +19,12 @@ to `NULL`.}
 \dontrun{
 library(ggplot2)
 data <- data.frame(x = 1:10, y = 1:10)
-ggplot(data, x, y) + geom_point() + my_theme()
+ggplot(data, aes(x, y)) + geom_point() + my_theme()
 }
 
 }
 \references{
-https://github.com/gadenbuie/ggpomological/blob/master/R/scale_pomological.R
+https://github.com/gadenbuie/ggpomological/blob/master/R/theme_pomological.R
 }
 \seealso{
 [ggplot2::theme]
