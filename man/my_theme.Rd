@@ -19,7 +19,7 @@ to `NULL`.}
 \dontrun{
 library(ggplot2)
 data <- data.frame(x = 1:10, y = 1:10)
-ggplot(data, x, y) + geom_point() + my_theme()
+ggplot(data, aes(x, y)) + geom_point() + my_theme()
 }
 
 }
