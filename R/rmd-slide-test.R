@@ -10,10 +10,15 @@
 #'
 slides_test <- function(...) {
 
-  # create file paths to package assets
+  # confirm deps ----
+  if (!requireNamespace("xaringan", quietly = TRUE)) {
+    stop("Package xaringan must be installed to use custom slide styles")
+  }
+
+  # create file paths to package assets ----
   css    <- pkg_resource("rmarkdown/resources/slide-styles-test.css")
 
-  # call the base html_document function
+  # call the base html_document function ----
   xaringan::moon_reader(
     seal = FALSE,
     css = css,
