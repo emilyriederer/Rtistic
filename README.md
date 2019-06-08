@@ -224,7 +224,7 @@ Looking at existing themes can spark creativity. More tactically, one can also b
 There is particularly good support for building `xaringan` themes
 
 - [`xaringan` wiki page](https://github.com/yihui/xaringan/wiki/Changing-fonts) describes different elements of the CSS and the relationship between different CSS files
-- ['xaringanthemer` R package](https://pkg.garrickadenbuie.com/xaringanthemer/) provides a user-friendly R API for generating the CSS code you need. If this is more appealing than working in raw CSS, the package's `write_xaringan_theme()` function will convert your R code to CSS code that can be saved in this package. 
+- [`xaringanthemer` R package](https://pkg.garrickadenbuie.com/xaringanthemer/) provides a user-friendly R API for generating the CSS code you need. If this is more appealing than working in raw CSS, the package's `write_xaringan_theme()` function will convert your R code to CSS code that can be saved in this package. 
 
 ## Credits
 
