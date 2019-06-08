@@ -49,24 +49,26 @@ The following files are available in the `scratchpad/` directory to help with th
 
 Including a logo or image in a self-contained RMarkdown requires translating that image into a text representation (called a URI). This folder helps users to abstract that process with the following files:
 
-- `my-footer-template.html`: Defines a combination of HTML code and a special `{LOGO}` placeholder
-- `my-logo.png`: An example logo. Additional logos can be kept here for convenience and package reproducibility
+- `footer-template-test.html`: Defines a combination of HTML code and a special `{LOGO}` placeholder
+- `logo-test.png`: An example logo. Additional logos can be kept here for convenience and package reproducibility
 - `generate-footer-logo.R`: A script that defines a function to convert footer template and logo files to a final footer file
 
 ### Boilerplate Code to Edit
 
 Boilerplate package code exists in the `R/` and `inst/` directories:
 
-- `my-gg-palette.R`: Defines colors of choice and uses them to create discrete (fixed number, interpolated, and opinionated) and continuous (monotonic and diverging) color palettes
-- `my-gg-theme.R`: Defines theme function for custom `ggplot2`s
-- `my-html-format.R`: Defines render function for custom RMarkdown themes. This depends upon:
-  + `inst/rmarkdown/resources/footer.html`: Custom HTML footer for inclusion in RMarkdown
-  + `inst/rmarkdown/resources/logo.png`: Custom logo for inclusion in RMarkdown footer
-  + `inst/rmarkdown/resources/styles.css`: Custom CSS to style RMarkdown
+- `gg-palette-test.R`: Defines colors of choice and uses them to create discrete (fixed number, interpolated, and opinionated) and continuous (monotonic and diverging) color palettes
+- `gg-theme-test.R`: Defines theme function for custom `ggplot2`s
+- `rmd-html-test.R`: Defines render function for custom RMarkdown themes. This depends upon:
+  + `inst/rmarkdown/resources/footer-test.html`: Custom HTML footer for inclusion in RMarkdown
+  + `inst/rmarkdown/resources/html-styles-test.css`: Custom CSS to style RMarkdown
+- `rmd-slides-test.R`: Defines render function for custom `xaringan` themes. This depends upon:
+  + `inst/rmarkdown/resouces/slide-styles-test.css`: Custom CSS to style slides
 
 Boilerplate code also exists in the `vignettes/` directory:
 
-- `my-gg-theme-vignette.R`: contains an array of basic plots to demonstrate the new themes created
+- `gg-palette-test.Rmd`: contains an array of basic plots to demonstrate the new palette and scales created
+- `gg-theme-test.Rmd`: demonstrates the effect of a custom theme on a plot, optionally paired with any of the custom palettes
 
 These are the files that participants should ultimately save under new names, edit, and PR back to the package. Other files should not be edited.
 
@@ -115,14 +117,14 @@ These are the files that participants should ultimately save under new names, ed
 
 #### Defining the palette
 
-- Make a copy of the `R/my-gg-palette.R` file in the same folder. Rename it as `{theme}-palette.R` where `{theme}` represents something descriptive about your theme.
+- Make a copy of the `R/gg-palette-test.R` file in the same folder. Rename it as `gg-palette-{theme}.R` where `{theme}` represents something descriptive about your theme.
 - Change the definitions of the variables `test_pal`, `test_pal_cont`, and `test_pal_div` and rename the `test` prefix to something appropriate (probably the `{theme}` stub)
 - Update the documentation to describe your palette
 - Save your file and run it locallly
 
 #### Documenting the palette
 
-- Make a copy of the `vignettes/my-gg-palette` in the same folder. Rename it as `{theme}-gg-palette.Rmd`
+- Make a copy of the `vignettes/gg-palette-test` in the same folder. Rename it as `gg-palette-{theme}.Rmd`
 - Since vignettes serve as long-form documentation, add some descriptive text about what this palette is meant to represent
 - Change references to the test palette throughout and point them to your newly-defined palette
 - Run the vignette chunks interactively to view your palettes. Iterate between this file and the R script defining the palettes until you are happy with the results.
@@ -135,7 +137,7 @@ These are the files that participants should ultimately save under new names, ed
 - Check out existing themes linked in the Resources section below for inspiration (and reuse!)
 - Open up the `scratchpad/gg-theme-demo.Rmd` file and play around with the supplied theme to understand the options
 - Iterate until you like the settings you have made. `ggplot2` has very nice defaults, so don't feel obligated to make major -- or any -- changes if you don't want to.
-- Make a copy of the `R/my-gg-theme.R` file in the same folder. Rename it as `{theme}-theme.R`
+- Make a copy of the `R/gg-theme-test.R` file in the same folder. Rename it as `gg-theme-{theme}.R`
 - Change the name of the function being defined to `theme_{theme}`
 - Move the code you created in the RMarkdown into the function definition 
 - Update the documentation to describe your theme
@@ -143,9 +145,9 @@ These are the files that participants should ultimately save under new names, ed
 
 #### Documenting the theme
 
-- Make a copy of the `vignettes/my-gg-theme-vignette` in the same folder. Rename it as `{theme}-gg-theme.Rmd`
+- Make a copy of the `vignettes/gg-theme-test` in the same folder. Rename it as `gg-theme-{theme}.Rmd`
 - Since vignettes serve as long-form documentation, add some descriptive text about what motivated this theme
-- Change the code to call your theme instead of using `+  my_theme()` 
+- Change the code to call your theme instead of using `+  theme_test()` 
 - Be sure to change any boilerplat text and update the vignette's title in the YAML header
 
 ### RMarkdown Theme Instructions
@@ -155,28 +157,43 @@ These are the files that participants should ultimately save under new names, ed
 - Check out existing themes linked in the Resources section below for inspiration (and reuse!)
 - Open up the `scratchpad/rmd-theme-demo.Rmd` file and play around with the supplied CSS to understand the options
 - Iterate until you like the settings you have made. Like `ggplot2`, RMarkdown has very nice defaults, so don't feel obligated to make major -- or any -- changes if you don't want to.
-- Make a copy of the `inst/rmarkdown/resources/my-styles.css` file in the same folder. Rename it as `{theme}-styles.css`. Move your CSS code from the scratchpad into this file
+- Make a copy of the `inst/rmarkdown/resources/html-styles-test.css` file in the same folder. Rename it as `html-styles-{theme}.css`. Move your CSS code from the scratchpad into this file
 
 #### Defining a footer for your theme
 
 *If your footer has a logo:*
 
-- Make a copy of the `footer-helpers/my-footer-template.html` file in the same folder. Rename is as `{theme}-footer-template.html`. Edit this to represent what your footer should look like. 
+- Make a copy of the `footer-helpers/footer-template-test.html` file in the same folder. Rename is as `footer-template-{theme}.html`. Edit this to represent what your footer should look like. 
 - Use `{LOGO}` (**including** the curly braces) as a placeholder for where the logo should go in the HTML template.
 - Add a logo to the `footer-helpers` folder 
 - Run the code in the `generate_footer_logo.R` file to locally definie the `generate_footer_logo()` function
-- Read this functions documentation. Then run it by passing in the paths to your template and logo. Send the final output to `inst/rmarkdown/resources/{theme}-footer.html`
+- Read this functions documentation. Then run it by passing in the paths to your template and logo. Send the final output to `inst/rmarkdown/resources/footer-{theme}.html`
 
 *If your footer does not have a logo*
 
-- - Make a copy of the `inst/rmarkdown/resources/my-footer.html` file in the same folder. Rename is as `{theme}-footer.html`. Edit this to represent what your footer should look like. 
+- - Make a copy of the `inst/rmarkdown/resources/footer-test.html` file in the same folder. Rename is as `footer-{theme}.html`. Edit this to represent what your footer should look like. 
 
 #### Defining the theme
 
-- Make a copy of the `R/my-html-format.R` file in the same folder. Rename it as `{theme}-html-format.R`
-- Change the name of the function being defined to `{theme}_html_format`
+- Make a copy of the `R/rmd-html-test.R` file in the same folder. Rename it as `rmd-html-{theme}.R`
+- Change the name of the function being defined to `html_{theme}`
 - Edit the lines of code that provide the filepath for `css` and `footer` to the files you have defined
 - Pull up the documentation for `rmarkdown::html_document()`, learn about the other parameters you can pass in, and decide if there are any other changes that you want to make
+- Update the documentation to describe your theme
+
+### xaringan Theme Instructions
+
+#### Defining CSS for your theme
+
+- Check out existing themes linked in the Resources section below for inspiration and tips for writing `xaringan` CSS 
+- Make a copy of the `inst/rmarkdown/resources/slide-styles-test.css` file in the same folder. Rename it as `slide-styles-{theme}.css`. Move your CSS code from the scratchpad into this file
+
+#### Defining the theme
+
+- Make a copy of the `R/rmd-slide-test.R` file in the same folder. Rename it as `rmd-slide-{theme}.R`
+- Change the name of the function being defined to `slides_{theme}`
+- Edit the lines of code that provide the filepath for `css` to the files you have defined
+- Pull up the documentation for `xaringan::moon_reader()`, learn about the other parameters you can pass in, and decide if there are any other changes that you want to make
 - Update the documentation to describe your theme
 
 ## Resources
@@ -201,6 +218,13 @@ Looking at existing themes can spark creativity. More tactically, one can also b
 
 - [Selector Gadget tool](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html): This browser widget can help participants explore the structure of an RMarkdown HTML output and find the HTML tags they want to style.
 - [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/inspect-styles/): Similarly, most browsers have robust tools for inspecting a website's source code. These instructions explain how to use Chrome's version.
+
+### xaringan Specific Utilities
+
+There is particularly good support for building `xaringan` themes
+
+- [`xaringan` wiki page](https://github.com/yihui/xaringan/wiki/Changing-fonts) describes different elements of the CSS and the relationship between different CSS files
+- ['xaringanthemer` R package](https://pkg.garrickadenbuie.com/xaringanthemer/) provides a user-friendly R API for generating the CSS code you need. If this is more appealing than working in raw CSS, the package's `write_xaringan_theme()` function will convert your R code to CSS code that can be saved in this package. 
 
 ## Credits
 

@@ -15,9 +15,9 @@
 #'
 #' @example {
 # generate_footer_logo(
-#   logo_path = "footer-helpers/my-logo.png",
-#   temp_path = "footer-helpers/my-footer-template.html",
-#   foot_path = "inst/rmarkdown/resources/my-footer.html"
+#   logo_path = "footer-helpers/logo-test.png",
+#   temp_path = "footer-helpers/footer-template-test.html",
+#   foot_path = "inst/rmarkdown/resources/footer-YOURTHEMENAME.html"
 #   )
 #' }
 

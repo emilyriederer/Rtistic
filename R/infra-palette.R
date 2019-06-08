@@ -1,4 +1,4 @@
-#' Custom Color and Fill Scales
+#' Custom color and fill scales
 #'
 #' Custom coloring and filling functions based on unique color palettes
 #'
@@ -26,7 +26,10 @@ NULL
 scale_color_discrete_rtistic <- function(palette = "test", extend = FALSE, ...){
 
   pal <- retrieve_palette(palette, "base")
-  ggplot2::discrete_scale("colour", "test", manual_pal_flex(pal, extend), na.value = "grey50", ...)
+  ggplot2::discrete_scale("colour", "test",
+                          manual_pal_flex(pal, extend),
+                          na.value = "grey50",
+                          ...)
 
 }
 
@@ -39,7 +42,10 @@ scale_colour_discrete_rtistic <- scale_color_discrete_rtistic
 scale_fill_discrete_rtistic <- function(palette = "test", extend = FALSE, ...){
 
   pal <- retrieve_palette(palette, "base")
-  ggplot2::discrete_scale("fill", "test", manual_pal_flex(pal, extend), na.value = "grey50", ...)
+  ggplot2::discrete_scale("fill", "test",
+                          manual_pal_flex(pal, extend),
+                          na.value = "grey50",
+                          ...)
 
 }
 
@@ -76,7 +82,10 @@ scale_fill_opinionated_rtistic <- function(palette = "test", ...){
 scale_color_diverging_rtistic <- function(palette = "test", ...) {
 
   pal <- retrieve_palette(palette, "div")
-  ggplot2::scale_colour_gradient2(low = pal[3], mid = pal[2], high = pal[1],...)
+  ggplot2::scale_colour_gradient2(low = pal[3],
+                                  mid = pal[2],
+                                  high = pal[1],
+                                  ...)
 
 }
 
@@ -89,7 +98,10 @@ scale_colour_diverging_rtistic <- scale_color_diverging_rtistic
 scale_fill_diverging_rtistic <- function(palette = "test", ...) {
 
   pal <- retrieve_palette(palette, "div")
-  ggplot2::scale_fill_gradient2(low = pal[3], mid = pal[2], high = pal[1],...)
+  ggplot2::scale_fill_gradient2(low = pal[3],
+                                mid = pal[2],
+                                high = pal[1],
+                                ...)
 
 }
 
@@ -100,7 +112,9 @@ scale_fill_diverging_rtistic <- function(palette = "test", ...) {
 scale_color_continuous_rtistic <- function(palette = "test", ...) {
 
   pal <- retrieve_palette(palette, "cont")
-  ggplot2::scale_colour_gradient(low = pal[1], high = pal[2],...)
+  ggplot2::scale_colour_gradient(low = pal[1],
+                                 high = pal[2],
+                                 ...)
 
 }
 
@@ -122,7 +136,7 @@ scale_fill_continuous_rtistic <- function(palette = "test", ...) {
 #' Get names of all unique palettes provided in Rtistic
 #'
 #' @param full Whether to include full palette names (with suffixes, e.g. \code{_cont}) or just stubs
-#' @return Vector of palette name stubs
+#' @return Vector of palette name stubs or full names
 #' @export
 #'
 #' @examples get_rtistic_palettes()
@@ -166,7 +180,7 @@ retrieve_palette <- function(name, type = c("base", "op", "div", "cont")){
 
   # attempt to get palette requrested
   pal_base <- paste0(name, "_pal")
-  pal_name <- if (type == "base") pal_base else paste0(name,"_pal_",type)
+  pal_name <- if (type == "base") pal_base else paste0(name, "_pal_", type)
   pal <- try(utils::getFromNamespace(pal_name, "Rtistic"))
 
   # if fails, attempt to use base palette

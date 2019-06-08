@@ -48,7 +48,7 @@ Here is what my theme looks like.
 ```{r}
 g_points + 
   labs(title = "My fancy plot") +
-  my_theme()
+  theme_test()
 ```
 
 It also pairs nicely with this palette.
@@ -57,6 +57,6 @@ It also pairs nicely with this palette.
 g_points + 
   scale_color_discrete_rtistic(palette = "test", extend = TRUE) + 
   labs(title = "My fancy plot") +
-  my_theme()
+  theme_test()
 ```
 

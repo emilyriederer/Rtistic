@@ -14,7 +14,8 @@ Imports:
     rmarkdown,
     scales
 Suggests: 
-    knitr
+    knitr,
+    xaringan
 VignetteBuilder: 
     knitr
 Encoding: UTF-8

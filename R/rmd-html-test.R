@@ -8,16 +8,11 @@
 #' @param ... additional arguments provided to \code{html_document}
 #' @export
 #'
-my_html_format = function(toc = TRUE, ...) {
-
-  # locations of resource files in the package
-  pkg_resource = function(...) {
-    system.file(..., package = "Rtistic")
-  }
+html_test <- function(toc = TRUE, ...) {
 
   # create file paths to package assets
-  css    = pkg_resource("rmarkdown/resources/my-styles.css")
-  footer = pkg_resource("rmarkdown/resources/my-footer.html")
+  css    <- pkg_resource("rmarkdown/resources/html-styles-test.css")
+  footer <- pkg_resource("rmarkdown/resources/footer-test.html")
 
   # call the base html_document function
   rmarkdown::html_document(

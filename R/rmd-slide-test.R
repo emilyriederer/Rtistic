@@ -1,0 +1,23 @@
+#' Test HTML template
+#'
+#' Loads additional style and template file
+#'
+#' @references https://raw.githubusercontent.com/dr-harper/example-rmd-templates/master/R/my_html_format.R
+#'
+#' @param toc should a table of contents be displayed?
+#' @param ... additional arguments provided to \code{html_document}
+#' @export
+#'
+slides_test <- function(...) {
+
+  # create file paths to package assets
+  css    <- pkg_resource("rmarkdown/resources/slide-styles-test.css")
+
+  # call the base html_document function
+  xaringan::moon_reader(
+    seal = FALSE,
+    css = css,
+    ...
+  )
+
+}
