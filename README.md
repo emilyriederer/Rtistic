@@ -82,7 +82,7 @@ These are the files that participants should ultimately save under new names, ed
   + If you're using RStudio, you can find all mentions of the name with `Ctrl+Shift+F`
   + Be sure to use the `available` package to make sure your name does not conflict with an existing package
 - Help teams keep their work clean and modular and review PRs carefully as they come in
-- As a finals step, consider making a basic `pkgdown` site with all of the themes. Vignettes created by individual teams will beome articles to display all of the different new themes as a "gallery". (For help *also* customizing this, you'll find a template style sheet in `pkgdown/extra.css`)
+- As a finals step, consider making a basic `pkgdown` site with all of the themes. Vignettes created by individual teams will beome articles to display all of the different new palettes and themes as a "gallery". (For help *also* customizing this, you'll find a template style sheet and config file in the `pkgdown/` directory. Contents should be organized reasonably (e.g. like functions and vignettes grouped together) if teams follow appropriate naming conventions.)
 
 *Initial Set Up - Forking Approach*
 
@@ -117,16 +117,16 @@ These are the files that participants should ultimately save under new names, ed
 
 - Make a copy of the `R/my-gg-palette.R` file in the same folder. Rename it as `{theme}-palette.R` where `{theme}` represents something descriptive about your theme.
 - Change the definitions of the variables `test_pal`, `test_pal_cont`, and `test_pal_div` and rename the `test` prefix to something appropriate (probably the `{theme}` stub)
-- Update the documentation to describe your pallete
+- Update the documentation to describe your palette
 - Save your file and run it locallly
 
 #### Documenting the palette
 
-- Make a copy of the `vignettes/my-gg-theme-vignette` in the same folder. Rename it as `{theme}-vignette.Rmd`
+- Make a copy of the `vignettes/my-gg-palette` in the same folder. Rename it as `{theme}-gg-palette.Rmd`
+- Since vignettes serve as long-form documentation, add some descriptive text about what this palette is meant to represent
 - Change references to the test palette throughout and point them to your newly-defined palette
 - Run the vignette chunks interactively to view your palettes. Iterate between this file and the R script defining the palettes until you are happy with the results.
 - Be sure to change any boilerplat text and update the vignette's title in the YAML header
-- Since vignettes serve as long-form documentation, add some descriptive text about what this palette is meant to represent
 
 ### ggplot Theme Instructions
 
@@ -143,10 +143,10 @@ These are the files that participants should ultimately save under new names, ed
 
 #### Documenting the theme
 
-- If you have not already done so, make a copy of the `vignettes/my-gg-theme-vignette` in the same folder. Rename it as `{theme}-vignette.Rmd`
-- Find where the `gg_points` and `gg_distrb` plot objects are defined at the top of the script. Add onto this code with `+ theme_{theme}()` to apply your theme to the plots
-- Be sure to change any boilerplat text and update the vignette's title in the YAML header
+- Make a copy of the `vignettes/my-gg-theme-vignette` in the same folder. Rename it as `{theme}-gg-theme.Rmd`
 - Since vignettes serve as long-form documentation, add some descriptive text about what motivated this theme
+- Change the code to call your theme instead of using `+  my_theme()` 
+- Be sure to change any boilerplat text and update the vignette's title in the YAML header
 
 ### RMarkdown Theme Instructions
 
