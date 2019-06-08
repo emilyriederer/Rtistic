@@ -1,0 +1,45 @@
+url: https://github.com/emilyriederer/Rtistic
+
+navbar:
+  title: "Rtistic"
+  left:
+    - icon: fa-home
+      href: index.html
+    - text: "Articles"
+      href: articles/index.html
+    - text: "Documentation"
+      href: reference/index.html
+    - text: "News"
+      href: news/index.html
+  right:
+   - icon: fa-github
+     href: https://github.com/emilyriederer/Rtistic/
+
+articles:
+  - title: "ggplot Palette Demos"
+    desc: Demo of available palettes and scales
+    contents:
+    - ends_with("gg-palette")
+  - title: "ggplot Theme Demos"
+    desc: Demo of available themes
+    contents:
+    - ends_with("gg-theme")
+
+reference:
+- title: Helper functions
+  desc: "Functions to check what themes are available"
+  contents:
+  - starts_with("get")
+- title: Scales for plots
+  desc: "Functions to apply different color palettes"
+  contents:
+  - starts_with("scale")
+- title: Themes for plots
+  desc: "Functions to apply different plot themes"
+  contents:
+  - contains("theme")
+- title: Custom RMarkdown output formats
+  desc: "HTML RMarkdown and xaringan slide themes"
+  contents:
+  - starts_with("rtistic")
+
