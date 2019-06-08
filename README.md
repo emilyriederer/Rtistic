@@ -76,7 +76,7 @@ These are the files that participants should ultimately save under new names, ed
 
 *Initial Set Up - Template Approach*
 
-- Generate your own repo from this template by going to [this link](https://github.com/emilyriederer/Rtistic/generate)
+- Generate your own repo from this template by clicking the green "Use Template" button above (next to the "Clone / Download" button) or by going to [this link](https://github.com/emilyriederer/Rtistic/generate)
 - Clone the repo to your computer (`git clone {put HTTPS URL here}`)
 - Replace all mentions of the package name (`Rtistic`) to your desired package name
   + If you're using RStudio, you can find all mentions of the name with `Ctrl+Shift+F`
