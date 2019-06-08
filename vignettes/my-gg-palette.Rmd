@@ -4,7 +4,7 @@ author: "Vignette Author"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{MY PALETTE palette demo}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -113,16 +113,5 @@ Normal continuous scales gradually move between two ends of a spectrum.
 
 ```{r}
 g_points_cont + scale_color_continuous_rtistic(palette = "test")
-```
-
-## Plot Theme
-
-Color palettes pair nicely with the corresponding theme.
-
-```{r}
-g_points + 
-  scale_color_discrete_rtistic(palette = "test", extend = TRUE) + 
-  labs(title = "My fancy plot") +
-  my_theme()
 ```
 

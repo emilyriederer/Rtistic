@@ -1,0 +1,62 @@
+---
+title: "Vignette Title"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{MY THEME ggplot theme demo}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Set Up
+
+```{r}
+library(Rtistic)
+library(ggplot2)
+```
+
+
+```{r}
+# make fake data for plots ----
+points <- data.frame(x = 1:10, y = 1:10)
+g_points <- ggplot(points, aes(x, y, col = factor(x))) + geom_point(size = 5)
+```
+
+## Motivation for this Theme
+
+ADD SOMETHING HERE!
+
+## Plot Theme
+
+To understand this theme, first consider this basic ggplot.
+
+```{r}
+g_points
+```
+
+
+Here is what my theme looks like.
+
+```{r}
+g_points + 
+  labs(title = "My fancy plot") +
+  my_theme()
+```
+
+It also pairs nicely with this palette.
+
+```{r}
+g_points + 
+  scale_color_discrete_rtistic(palette = "test", extend = TRUE) + 
+  labs(title = "My fancy plot") +
+  my_theme()
+```
+
