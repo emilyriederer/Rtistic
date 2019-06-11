@@ -5,7 +5,7 @@
 #' @references https://github.com/gadenbuie/ggpomological/blob/master/R/theme_pomological.R
 #' @seealso [ggplot2::theme]
 #' @param base_theme Starting theme of plot, default is
-#'   [ggplot2::theme_minimal()]. Any elements set by `theme_pomological()` will
+#'   [ggplot2::theme_minimal()]. Any elements set by `theme_test()` will
 #'   overwrite the `base_theme` unless the specific parameter is explicitly set
 #'   to `NULL`.
 #'
