@@ -4,13 +4,7 @@
 \alias{theme_test}
 \title{Test ggplot theme}
 \usage{
-theme_test(base_theme = ggplot2::theme_minimal())
-}
-\arguments{
-\item{base_theme}{Starting theme of plot, default is
-[ggplot2::theme_minimal()]. Any elements set by `theme_pomological()` will
-overwrite the `base_theme` unless the specific parameter is explicitly set
-to `NULL`.}
+theme_test()
 }
 \description{
 [ggplot2] plot theme based on...
@@ -21,6 +15,7 @@ library(ggplot2)
 data <- data.frame(x = 1:10, y = 1:10)
 ggplot(data, aes(x, y)) + geom_point() + theme_test()
 }
+
 
 }
 \references{
