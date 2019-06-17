@@ -7,9 +7,7 @@
 slides_test(...)
 }
 \arguments{
-\item{...}{additional arguments provided to \code{html_document}}
-
-\item{toc}{should a table of contents be displayed?}
+\item{...}{additional arguments provided to \code{moon_reader}}
 }
 \description{
 Loads additional style and template file

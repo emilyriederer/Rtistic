@@ -4,7 +4,10 @@
 \alias{theme_test}
 \title{Test ggplot theme}
 \usage{
-theme_test()
+theme_test(base_theme = ggplot::theme_minimal())
+}
+\arguments{
+\item{base_theme}{A base theme upon which additional theme-specific options are applied}
 }
 \description{
 [ggplot2] plot theme based on...

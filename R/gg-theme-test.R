@@ -2,6 +2,8 @@
 #'
 #' [ggplot2] plot theme based on...
 #'
+#' @param base_theme A base theme upon which additional theme-specific options are applied
+#'
 #' @references https://github.com/gadenbuie/ggpomological/blob/master/R/theme_pomological.R
 #' @seealso [ggplot2::theme]
 #'
@@ -15,9 +17,9 @@
 #'
 #' @export
 
-theme_test <- function() {
+theme_test <- function(base_theme = ggplot::theme_minimal()) {
 
-  ggplot2::theme_minimal() +
+  base_theme +
   ggplot2::theme(
     title = ggplot2::element_text(hjust = 0.5, vjust = 0.5),
     plot.background = ggplot2::element_rect(fill = "lightblue")
