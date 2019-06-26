@@ -19,11 +19,11 @@ articles:
   - title: "ggplot Palette Demos"
     desc: Demo of available palettes and scales
     contents:
-    - ends_with("gg-palette")
+    - starts_with("gg-palette")
   - title: "ggplot Theme Demos"
     desc: Demo of available themes
     contents:
-    - ends_with("gg-theme")
+    - starts_with("gg-theme")
 
 reference:
 - title: Helper functions
@@ -41,5 +41,6 @@ reference:
 - title: Custom RMarkdown output formats
   desc: "HTML RMarkdown and xaringan slide themes"
   contents:
-  - starts_with("rtistic")
+  - starts_with("html")
+  - starts_with("slides")
 
