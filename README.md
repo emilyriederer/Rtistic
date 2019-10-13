@@ -1,6 +1,6 @@
 # Rtistic <img src="man/figures/logo.png" align="right" height=140/>
 
-## Intro
+## Introduction
 
 The goal of `Rtistic` is to provide an easy 'hackathon-in-a-box' activity groups of R users. Users can collaborate to create a collection of custom themes for `ggplot2`, RMarkddown HTML documents, and `xaringan`.
 
