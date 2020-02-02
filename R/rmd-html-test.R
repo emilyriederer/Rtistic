@@ -12,6 +12,9 @@ html_test <- function(
   toc = TRUE,
   ...) {
 
+  # create file paths to package assets
+  css    <- pkg_resource("rmarkdown/resources/html-styles-test.css")
+
   ## TODO: FAVICON
   ## 1. Save favicon.png in inst/rmarkdown/resources
   ## 2. Pass `in_header = favicon_file` as an argument to rmarkdown::includes() below
@@ -37,10 +40,6 @@ html_test <- function(
     "</center></footer>")
   footer_file <- tempfile()
   writeLines(footer_html, footer_file)
-
-  # create file paths to package assets
-  css    <- pkg_resource("rmarkdown/resources/html-styles-test.css")
-  #footer <- pkg_resource("rmarkdown/resources/footer-test.html")
 
   # call the base html_document function
   rmarkdown::html_document(
