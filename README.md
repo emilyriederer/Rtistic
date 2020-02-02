@@ -45,14 +45,6 @@ The following files are available in the `scratchpad/` directory to help with th
 - `rmd-theme-demo.Rmd`: An RMarkdown document with an in-line CSS chunk. Ultimately, CSS will be moved to a separate file for your final theme package, but having it embedded in the document allows for fast and transparent iteration to see the effects of different options
 - `gg-theme-demo.Rmd`: An RMarkdown document with dummy data and `ggplot2` with a lot of theme options. The current ggplot is pretty ugly, but this is an attempt to provide a near one-stop-shop overview into `ggplot2` theme options that participants can manipulate
 
-### Helpers for Working with Images
-
-Including a logo or image in a self-contained RMarkdown requires translating that image into a text representation (called a URI). This folder helps users to abstract that process with the following files:
-
-- `footer-template-test.html`: Defines a combination of HTML code and a special `{LOGO}` placeholder
-- `logo-test.png`: An example logo. Additional logos can be kept here for convenience and package reproducibility
-- `generate-footer-logo.R`: A script that defines a function to convert footer template and logo files to a final footer file
-
 ### Boilerplate Code to Edit
 
 Boilerplate package code exists in the `R/` and `inst/` directories:
@@ -60,8 +52,9 @@ Boilerplate package code exists in the `R/` and `inst/` directories:
 - `gg-palette-test.R`: Defines colors of choice and uses them to create discrete (fixed number, interpolated, and opinionated) and continuous (monotonic and diverging) color palettes
 - `gg-theme-test.R`: Defines theme function for custom `ggplot2`s
 - `rmd-html-test.R`: Defines render function for custom RMarkdown themes. This depends upon:
-  + `inst/rmarkdown/resources/footer-test.html`: Custom HTML footer for inclusion in RMarkdown
   + `inst/rmarkdown/resources/html-styles-test.css`: Custom CSS to style RMarkdown
+  + `inst/rmarkdown/resources/favicon.png`: Custom favicon for document
+  + `inst/rmarkdown/resources/logo-test.png`: Custom logo for document footer
 - `rmd-slides-test.R`: Defines render function for custom `xaringan` themes. This depends upon:
   + `inst/rmarkdown/resouces/slide-styles-test.css`: Custom CSS to style slides
 
