@@ -19,6 +19,7 @@ html_test <- function(
   ## 1. Save favicon.png in inst/rmarkdown/resources
   ## 2. Pass `in_header = favicon_file` as an argument to rmarkdown::includes() below
   ## 3. Delete these instructions (##)
+  ## If you do NOT want a footer, delete this section and remove the `in_header` line from `includes` below
   # create temp file for favicon ----
   favicon_locn <- pkg_resource('rmarkdown/resources/favicon.png')
   favicon_html <- paste0('<link rel="shortcut icon" href="',favicon_locn,'">')
@@ -30,6 +31,7 @@ html_test <- function(
   ## 2. Update file path passed to `footer_logo <- pkg_resource()`
   ## 3. Update additional rows of HTML. Consider what should be set as an optional argument
   ## 4. Delete these instructions (##)
+  ## If you do NOT want a footer, delete this section and remove the `after_body` line from `includes` below
   # create temp file for footer ----
   footer_logo <- pkg_resource('rmarkdown/resources/logo-test.png')
   footer_logo_html <- paste0("<img src = '", footer_logo, "' width = 150>")
