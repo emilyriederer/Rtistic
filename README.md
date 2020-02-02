@@ -150,7 +150,7 @@ These are the files that participants should ultimately save under new names, ed
 - Change the code to call your theme instead of using `+  theme_test()` 
 - Be sure to change any boilerplat text and update the vignette's title in the YAML header
 
-### RMarkdown Theme Instructions
+### RMarkdown HTML Theme Instructions
 
 #### Defining CSS for your theme
 
@@ -159,27 +159,34 @@ These are the files that participants should ultimately save under new names, ed
 - Iterate until you like the settings you have made. Like `ggplot2`, RMarkdown has very nice defaults, so don't feel obligated to make major -- or any -- changes if you don't want to.
 - Make a copy of the `inst/rmarkdown/resources/html-styles-test.css` file in the same folder. Rename it as `html-styles-{theme}.css`. Move your CSS code from the scratchpad into this file
 
-#### Defining a footer for your theme
-
-*If your footer has a logo:*
-
-- Make a copy of the `footer-helpers/footer-template-test.html` file in the same folder. Rename is as `footer-template-{theme}.html`. Edit this to represent what your footer should look like. 
-- Use `{LOGO}` (**including** the curly braces) as a placeholder for where the logo should go in the HTML template.
-- Add a logo to the `footer-helpers` folder 
-- Run the code in the `generate_footer_logo.R` file to locally definie the `generate_footer_logo()` function
-- Read this functions documentation. Then run it by passing in the paths to your template and logo. Send the final output to `inst/rmarkdown/resources/footer-{theme}.html`
-
-*If your footer does not have a logo*
-
-- - Make a copy of the `inst/rmarkdown/resources/footer-test.html` file in the same folder. Rename is as `footer-{theme}.html`. Edit this to represent what your footer should look like. 
-
-#### Defining the theme
+#### Defining your HTML theme
 
 - Make a copy of the `R/rmd-html-test.R` file in the same folder. Rename it as `rmd-html-{theme}.R`
 - Change the name of the function being defined to `html_{theme}`
 - Edit the lines of code that provide the filepath for `css` and `footer` to the files you have defined
 - Pull up the documentation for `rmarkdown::html_document()`, learn about the other parameters you can pass in, and decide if there are any other changes that you want to make
 - Update the documentation to describe your theme
+
+#### Adding a favicon to your theme
+
+Favicons are the small icon that show up in the browser tab for a website or other HTML document.
+
+- Find an image you wish to use for your favicon. Small, square images of type `png`, `gif`, or `ico` work the best.
+- Save this image as `favicon.png` in `inst/rmarkdown/resources`. You will have to delete the image that is currently there (the `Rtistic` logo).
+- Open the R script that defines your HTML theme. If you followed the instructions about, it should be named `rmd-html-{theme}.R`
+- Find the section of your theme which begins `## TODO FAVICON`
+- Follow the instructions commented in that section. In summary:
+  + Uncomment the boilerplate code that writes an HTML header pointing to your favicon
+  + Add `in_header = favicon_file` inside of `includes = rmarkdown::includes()`
+  
+### Adding a footer to your theme
+
+- Examine the section of the boilerplate theme which begins `## TODO: FOOTER`. This dynamically generates a footer and saves it to a temp file.
+- If you wish to include an image in your footer, save this image as `logo-{theme}.png` in `inst/rmarkdown/resources` and change the line `footer_logo <- pkg_resource('rmarkdown/resources/logo-test.png')` to reference your new image file
+- The subsequent lines of code generate HTML for name, contact information, and timestamp. You may edit these in many different ways:
+  + Add or remove lines with additional standard information
+  + Parameterize some of this information in your function so users can dynamically change the stated name/email, chose whether to include a timestamp or not, etc.
+  + Add `after_body = footer_file` inside of `include = rmarkdown::includes()`
 
 ### xaringan Theme Instructions
 
