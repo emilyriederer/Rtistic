@@ -5,12 +5,13 @@
 #' @references https://raw.githubusercontent.com/dr-harper/example-rmd-templates/master/R/my_html_format.R
 #'
 #' @param toc should a table of contents be displayed?
+#' @param theme Base RMarkdown theme on which to build. Defaults to "cosmo".
+#'      (Note that \code{html_document} default is "lumen").
 #' @param ... additional arguments provided to \code{html_document}
 #' @export
 #'
 html_test <- function(
   toc = TRUE,
-  toc_float = TRUE,
   theme = "cosmo",
   ...) {
 
@@ -33,8 +34,9 @@ html_test <- function(
   rmarkdown::html_document(
     css = css,
     includes = rmarkdown::includes(
-      in_header = favicon_file,
-      after_body = footer),
+      #in_header = favicon_file,
+      after_body = footer
+      ),
     ...
   )
 
