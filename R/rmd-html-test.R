@@ -12,7 +12,7 @@ html_test <- function(
   toc = TRUE,
   ...) {
 
-  # create file paths to package assets
+  # create file paths to package assets ----
   css    <- pkg_resource("rmarkdown/resources/html-styles-test.css")
 
   ## TODO: FAVICON
@@ -26,6 +26,11 @@ html_test <- function(
   writeLines(favicon_html, favicon_file)
 
   ## TODO: FOOTER
+  ## 1. Save footer logo as logo-{theme}.png in inst/rmarkdown/resources
+  ## 2. Update file path passed to `footer_logo <- pkg_resource()`
+  ## 3. Update additional rows of HTML. Consider what should be set as an optional argument
+  ## 4. Delete these instructions (##)
+  # create temp file for footer ----
   footer_logo <- pkg_resource('rmarkdown/resources/logo-test.png')
   footer_logo_html <- paste0("<img src = '", footer_logo, "' width = 150>")
   footer_text_html <- '
@@ -41,7 +46,7 @@ html_test <- function(
   footer_file <- tempfile()
   writeLines(footer_html, footer_file)
 
-  # call the base html_document function
+  # call the base html_document function ----
   rmarkdown::html_document(
     css = css,
     includes = rmarkdown::includes(
