@@ -21,10 +21,10 @@ html_test <- function(
   ## 3. Pass `in_header = favicon_file` as an argument to rmarkdown::includes() below
   ## 4. Delete these instructions (##)
   # create temp file for favicon ----
-  favicon_locn <- pkg_resource('rmarkdown/resources/favicon.png')
-  favicon_html <- paste0('<link rel="shortcut icon" href="',favicon_locn,'">')
-  favicon_file <- tempfile()
-  writeLines(favicon_html, favicon_file)
+  # favicon_locn <- pkg_resource('rmarkdown/resources/favicon.png')
+  # favicon_html <- paste0('<link rel="shortcut icon" href="',favicon_locn,'">')
+  # favicon_file <- tempfile()
+  # writeLines(favicon_html, favicon_file)
 
   # create file paths to package assets
   css    <- pkg_resource("rmarkdown/resources/html-styles-test.css")
@@ -34,7 +34,6 @@ html_test <- function(
   rmarkdown::html_document(
     css = css,
     includes = rmarkdown::includes(
-      #in_header = favicon_file,
       after_body = footer
       ),
     ...

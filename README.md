@@ -150,7 +150,7 @@ These are the files that participants should ultimately save under new names, ed
 - Change the code to call your theme instead of using `+  theme_test()` 
 - Be sure to change any boilerplat text and update the vignette's title in the YAML header
 
-### RMarkdown Theme Instructions
+### RMarkdown HTML Theme Instructions
 
 #### Defining CSS for your theme
 
@@ -171,7 +171,7 @@ These are the files that participants should ultimately save under new names, ed
 
 *If your footer does not have a logo*
 
-- - Make a copy of the `inst/rmarkdown/resources/footer-test.html` file in the same folder. Rename is as `footer-{theme}.html`. Edit this to represent what your footer should look like. 
+- Make a copy of the `inst/rmarkdown/resources/footer-test.html` file in the same folder. Rename is as `footer-{theme}.html`. Edit this to represent what your footer should look like. 
 
 #### Defining the theme
 
@@ -180,6 +180,18 @@ These are the files that participants should ultimately save under new names, ed
 - Edit the lines of code that provide the filepath for `css` and `footer` to the files you have defined
 - Pull up the documentation for `rmarkdown::html_document()`, learn about the other parameters you can pass in, and decide if there are any other changes that you want to make
 - Update the documentation to describe your theme
+
+#### Adding a favicon to your theme
+
+Favicons are the small icon that show up in the browser tab for a website or other HTML document.
+
+- Find an image you wish to use for your favicon. Small, square images of type `png`, `gif`, or `ico` work the best.
+- Save this image as `favicon.png` in `inst/rmarkdown/resources`. You will have to delete the image that is currently there (the `Rtistic` logo).
+- Open the R script that defines your HTML theme. If you followed the instructions about, it should be named `rmd-html-{theme}.R`
+- Find the section of your theme which begins `TODO FAVICON`
+- Follow the instructions commented in that section. In summary:
+  + Uncomment the boilerplate code that writes an HTML header pointing to your favicon
+  + Add `in_header = favicon_file` inside of `includes = rmarkdown::includes()`
 
 ### xaringan Theme Instructions
 
