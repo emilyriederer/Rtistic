@@ -4,13 +4,10 @@
 \alias{html_test}
 \title{Test HTML template}
 \usage{
-html_test(toc = TRUE, theme = "cosmo", ...)
+html_test(toc = TRUE, ...)
 }
 \arguments{
 \item{toc}{should a table of contents be displayed?}
-
-\item{theme}{Base RMarkdown theme on which to build. Defaults to "cosmo".
-(Note that \code{html_document} default is "lumen").}
 
 \item{...}{additional arguments provided to \code{html_document}}
 }
