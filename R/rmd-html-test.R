@@ -5,14 +5,11 @@
 #' @references https://raw.githubusercontent.com/dr-harper/example-rmd-templates/master/R/my_html_format.R
 #'
 #' @param toc should a table of contents be displayed?
-#' @param theme Base RMarkdown theme on which to build. Defaults to "cosmo".
-#'      (Note that \code{html_document} default is "lumen").
 #' @param ... additional arguments provided to \code{html_document}
 #' @export
 #'
 html_test <- function(
   toc = TRUE,
-  theme = "cosmo",
   ...) {
 
   ## TODO: FAVICON
@@ -25,16 +22,32 @@ html_test <- function(
   favicon_file <- tempfile()
   writeLines(favicon_html, favicon_file)
 
+  ## TODO: FOOTER
+  footer_logo <- pkg_resource('rmarkdown/resources/logo-test.png')
+  footer_logo_html <- paste0("<img src = '", footer_logo, "' width = 150>")
+  footer_text_html <- '
+    <p>Produced by XXX. All rights reserved. </p>
+    <p>Contact YOUREMAIL@gmail.com for more information.</p>'
+  footer_tmsp_html <- paste("<p>Last generated at", Sys.time(), "</p>")
+  footer_html <- paste(
+    "<footer><hr/><center><br/>",
+    footer_logo_html,
+    footer_text_html,
+    footer_tmsp_html,
+    "</center></footer>")
+  footer_file <- tempfile()
+  writeLines(footer_html, footer_file)
+
   # create file paths to package assets
   css    <- pkg_resource("rmarkdown/resources/html-styles-test.css")
-  footer <- pkg_resource("rmarkdown/resources/footer-test.html")
+  #footer <- pkg_resource("rmarkdown/resources/footer-test.html")
 
   # call the base html_document function
   rmarkdown::html_document(
     css = css,
     includes = rmarkdown::includes(
       in_header = favicon_file,
-      after_body = footer
+      after_body = footer_file
       ),
     ...
   )
